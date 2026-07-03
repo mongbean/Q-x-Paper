@@ -1,0 +1,39 @@
+\documentclass[twoside]{article}
+
+%%%%%%%uncomment if you have a bib
+%\usepackage[style=alphabetic-verb]{biblatex}
+%\addbibresource{references.bib}
+
+\input{preamble/preamble}% do not change, except for operators, where you can put custom shortcuts and such.
+
+\newcommand{\TheTitle}{Title Here} %put title in this
+
+\author{author 1, author 2 etc} %put authors here, math uses alphabetical order of last name for author order.
+
+\newcommand{\AuthorLast}{Put last names here} %put last names of author here, for header.
+
+\begin{document}
+
+\maketitle
+\begin{center}
+ \includegraphics[height=4em]{Ross-Logo.png}
+\end{center}
+ 
+\setstretch{0.1}
+\tableofcontents
+\setstretch{1.25}
+
+\pagestyle{fancy}
+
+\input{Content} % edit Content to put in content
+
+%%%%%uncomment if using a bib
+%\setstretch{0.1}
+%\pagestyle{plain}
+%\renewcommand*{\bibfont}{\small}
+%\printbibliography[
+%heading=bibintoc,
+%title={Bibliography},
+%]
+
+\end{document}

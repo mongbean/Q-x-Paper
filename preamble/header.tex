@@ -1,0 +1,16 @@
+%%%%% header
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE]{\TheTitle\hfill Ross Mathematics program}
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+\fancyhead[RO]{\AuthorLast\hfill Section : \rightmark}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{\iffootnote{0pt}{0.3pt}}
+\fancyfoot[C]{\thepage}
+
+\titleformat{\part}[display]
+{\centering\scshape\huge}
+{Part \thepart}
+{0.5em}
+{}
+%%%%% header
