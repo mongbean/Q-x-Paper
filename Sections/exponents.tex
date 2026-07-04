@@ -1,0 +1,17 @@
+\begin{lemma}
+    $a^na^m = a^{n+m} \quad \forall a \in \bZ,\, n, m \in \bZ \cup \{0\}$
+\end{lemma}
+\begin{proof}
+    Let $S= \left \{ n \in \bZ^+ \mid \exists m \in \bZ^+ \cup \{0\} \text{ s.t. } a^na^m \neq a^{n+m}\right \}$. For the sake of contradiction, S is not empty. By the well-ordering principle, since $S\subset \bZ^+$, there must be a least element $l\in S$. First, $\forall m \in \bZ^+$, 
+    \begin{align*}
+        a \cdot a^{m-1} &= a^m \\
+        a^1 \cdot a^{m-1} &= a^m 
+    \end{align*}
+    Thus, $1 \notin S$ as $m-1 \in \bZ^+$. Therefore, by NIBZO $l>1$ and $(l-1) \in \bZ^+$, but $l-1 \notin S$.
+    \begin{align*}
+        a^{l-1} a^m &= a^{l+m-1}\\
+        a \m a^{l-1} a^m &= a \m a^{l+m-1}\\
+        a^la^m&=a^{l+m}
+    \end{align*}
+    Thus, $l \notin S$. However, this contradicts that $l$ is the least element of $S$. So, $S$ must be empty.
+\end{proof}
