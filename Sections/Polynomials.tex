@@ -1,6 +1,6 @@
 
 \begin{definition}[The polynomial ring $\Qx$]
-We define a polynominal $f(x) \in \Qx$ with degree $n$ if it can be written as
+We define a polynomial $f(x) \in \Qx$ with degree $n$ if it can be written as
 \[
 f(x)=\sum_{0}^{n} a_i x^i
 \]
@@ -35,7 +35,7 @@ have $0_{\Qx}\neq1_{\Qx}$.
 \end{proof}
 
 \begin{definition}
-    For $f(x) \in \qx$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
+    For $f(x) \in \Qx$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
     \| f(x) \|  = 2^{\deg{f(x)}}
     \]
 with the following properties:
@@ -51,7 +51,7 @@ with the following properties:
         \|f(x)g(x)\|=2^{n+m}=2^n2^m = \|f(x)g(x)\|
         \]
     \end{proof}
-    \item For any $c(x) \in \qx ^ {\times}$, $\|c(x)\| = 1$.
+    \item For any $c(x) \in \Qx ^ {\times}$, $\|c(x)\| = 1$.
 \begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
 \end{itemize}
 \end{definition}
@@ -242,6 +242,6 @@ g(x)=f(x)q(x).
     For $f(x),g(x)\in\Qx$, we defince $\gcd(f(x),g(x)) = d(x)$ to satisfy:
     \begin{itemize}
         \item $d(x) \mid f(x)$ and $d(x) \mid g(x)$
-        \item $\forall h(x) \in \qx$ s.t. $h(x) \mid f(x)$ and $h(x) \mid g(x)$, $\|h(x)\| \leq \|d(x)\|$
+        \item $\forall h(x) \in \Qx$ s.t. $h(x) \mid f(x)$ and $h(x) \mid g(x)$, $\|h(x)\| \leq \|d(x)\|$
     \end{itemize}
 \end{definition} %%todo: existence and uniqueness
