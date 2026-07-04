@@ -1,5 +1,6 @@
-
 \section{Introduction}
+
+
 
 
 \begin{theorem}\label{theorem 1}
@@ -20,14 +21,99 @@ Historical background is often nice.
 \section{Axioms}
 You can make subsections if you find it appropriate.
 
-\subsection{Axioms of this type}
-These axioms explain these properties of the object. They are important because of these reasons.
+\subsection{Integers}
+\begin{lemma}[NIBZO]
+There is no integer strictly between $0$ and $1$.  Equivalently, if
+$n\in\mathbb{Z}$ and
+\[
+0<n<1,
+\]
+then such an $n$ cannot exist.
+\end{lemma}
 
-\subsection{Axioms of another type}
-These are different type of axioms from the previous one because of this. These are important because of these reasons.
+\begin{proof}
+Suppose, for contradiction, that there is an integer strictly between $0$ and
+$1$.  Put
+\[
+S=\{n\in\mathbb{Z}:0<n<1\}.
+\]
+Then $S$ is nonempty and $S\subseteq\mathbb{Z}_{\geq0}$.  By the well-ordering
+principle, $S$ has a least element.  Call it $m$.
 
-\section{Math}
-%%%%%%%%%TODO: prove that c \in \q are the only units in \qx %%%%%%%%%
+Since $0<m$, multiplicative closure of positive integers gives $0<m^2$.  Since
+$m<1$ and $m>0$, multiplying the inequality $m<1$ by the positive integer $m$
+gives
+\[
+m^2<m.
+\]
+Thus $m^2$ is also an integer satisfying
+\[
+0<m^2<m<1.
+\]
+So $m^2\in S$, but $m^2<m$.  This contradicts the choice of $m$ as the least
+element of $S$.  Therefore $S$ is empty.
+\end{proof}
+
+\subsection{Rationals}
+\begin{lemma}[No zero divisors in $\mathbb{Q}$]
+If $a,b\in\mathbb{Q}$ and $ab=0$, then $a=0$ or $b=0$.
+\end{lemma}
+
+\begin{proof}
+Suppose $ab=0$.  If $a=0$, there is nothing to prove.  Now assume $a\neq0$.
+Then $a^{-1}$ exists in
+$\mathbb{Q}$.  Multiplying both sides of $ab=0$ by $a^{-1}$ gives
+\[
+a^{-1}(ab)=a^{-1}\cdot0.
+\]
+By associativity, the left side is
+\[
+(a^{-1}a)b=1b=b.
+\]
+Also $a^{-1}\cdot0=0$: indeed,
+\[
+a^{-1}\cdot0=a^{-1}(0+0)=a^{-1}\cdot0+a^{-1}\cdot0,
+\]
+and adding the additive inverse of $a^{-1}\cdot0$ to both sides gives
+$a^{-1}\cdot0=0$.  Hence $b=0$.  Therefore $a=0$ or $b=0$.
+\end{proof}
+\subsection{The Ring $\Qx$}
+\begin{definition}[The polynomial ring $\Qx$]
+We define a polynominal $f(x) \in \Qx$ with degree $n$ if it can be written as
+\[
+f(x)=\sum_{0}^{n} a_i x^i
+\]
+where $n\in\mathbb{Z}_{\geq0}$ and each coefficient $a_i$ lies in $\mathbb{Q}$ and $a_n \neq 0$.
+\end{definition}
+
+\begin{theorem}[$\Qx$ is a commutative ring.]
+\end{theorem}
+
+\begin{proof} %%needs to be fixed is kinda wishy washy
+We check the ring conditions.  Addition stays inside $\Qx$ because each
+coefficient $a_i+b_i$ is rational.  Multiplication also stays inside $\Qx$
+because each coefficient $c_k$ is built from finitely many sums and products of
+rational numbers.
+
+The zero polynomial is the additive identity because adding zero to every
+coefficient changes nothing.  The polynomial $-f(x)$ is the additive inverse of
+$f(x)$ because each coefficient becomes $a_i+(-a_i)=0$.  The constant polynomial
+$1$ is the multiplicative identity because multiplying by $1$ leaves the
+coefficients unchanged.
+
+The associative and commutative laws come from the same laws in $\mathbb{Q}$,
+coefficient by coefficient.  For instance, addition is associative because
+\[
+(a_k+b_k)+c_k=a_k+(b_k+c_k)
+\]
+for each coefficient.  The multiplication laws and distributivity are checked in
+the same way from the rational-number laws.
+
+Finally, the zero polynomial has constant coefficient $0$, while the constant
+polynomial $1$ has constant coefficient $1$.  Since $0\neq1$ in $\mathbb{Q}$,
+have $0_{\Qx}\neq1_{\Qx}$.
+\end{proof}
+
 \begin{definition}
     For $f(x) \in \qx$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
     \| f(x) \|  = 2^{\deg{f(x)}}
@@ -39,6 +125,300 @@ with the following properties:
     \item For any $c(x) \in \qx ^ {\times}$, $\|c(x)\| = 1$.\\
 \textit{Proof.} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$. 
 \end{itemize}
+
+\begin{lemma}[Multiplication]
+
+%%%TODO: this is not rigorous
+For multiplication, if
+\[
+f(x)=a_0+a_1x+\cdots+a_mx^m
+\qquad\text{and}\qquad
+g(x)=b_0+b_1x+\cdots+b_nx^n,
+\]
+then
+\[
+f(x)g(x)=c_0+c_1x+\cdots+c_{m+n}x^{m+n},
+\]
+where each coefficient $c_k$ is found by adding all products $a_ib_j$ for which
+the exponents satisfy $i+j=k$.  For example,
+\[
+c_0=a_0b_0,\qquad c_1=a_0b_1+a_1b_0,\qquad
+c_{m+n}=a_mb_n.
+\]
+\end{lemma}
+
+\begin{definition}[Zero, one, and negatives]
+The zero element of $\Qx$ is the polynomial $0_{Qx} = 0$. Define the degree of $0_{Qx}$ to be $-\infty$.  
+The one element of $\Qx$ is the constant polynomial
+\[
+1_{\Qx}=1 
+\]
+If
+\[
+f(x)=\sum_{0}^{n} a_i x^i
+\]
+then
+\[
+-f(x)=\sum_{0}^{n} -a_i x^i
+\]
+\end{definition}
+
+\begin{theorem}[$\Qx$ has no zero divisors]
+If $f(x),g(x)\in\Qx$ and
+\[
+f(x)g(x)=0,
+\]
+then $f(x)=0$ or $g(x)=0$.
+\end{theorem}
+
+\begin{proof} %%TODO: change to norm
+Suppose $f\neq0$ and $g\neq0$.  Then
+\[
+\deg(fg)=\deg(f)+\deg(g)\geq0,
+\]
+so $fg$ is nonzero.  This contradicts $fg=0$.  Hence at least one of $f$ and
+$g$ must be zero.
+\end{proof}
+
+\begin{corollary}[Cancellation]
+If $h(x)\neq0$ and
+\[
+h(x)f(x)=h(x)g(x),
+\]
+then $f(x)=g(x)$.
+\end{corollary}
+
+\begin{proof}
+Subtract the right side from the left:
+\[
+h(f-g)=0.
+\]
+Since $h\neq0$ and $\Qx$ has no zero divisors, we must have
+$f-g=0$.  Thus $f=g$.
+\end{proof}
+
+\section{Basic Arithmetic Facts}
+
+\begin{lemma}[Uniqueness of zero and one]
+The additive identity and multiplicative identity in $\Qx$ are unique.
+In particular, if $f(x)+z(x)=f(x)$ for every $f(x)\in\Qx$, then
+$z(x)=0$.  Similarly, if $f(x)u(x)=f(x)$ for every $f(x)\in\Qx$, then
+$u(x)=1$.
+\end{lemma}
+
+\begin{proof}
+Suppose $z$ acts like an additive identity for $f$, so $f+z=f$.  Add $-f$ to
+both sides:
+\[
+(-f)+(f+z)=(-f)+f.
+\]
+By associativity and the definition of additive inverse, this becomes
+\[
+0+z=0.
+\]
+Since $0$ is the additive identity, $z=0$.
+
+Now suppose $u$ acts like a multiplicative identity for every polynomial.  Test
+this on the constant polynomial $1$:
+\[
+1\cdot u=1.
+\]
+But $1\cdot u=u$.  Hence $u=1$.
+\end{proof}
+
+\begin{lemma}[Uniqueness of additive inverses]
+If $u(x)$ and $v(x)$ are both additive inverses of $f(x)$, then $u(x)=v(x)$.
+\end{lemma}
+
+\begin{proof}
+Assume
+\[
+f+u=0
+\qquad\text{and}\qquad
+f+v=0.
+\]
+Then $f+u=f+v$.  Add $-f$ to both sides:
+\[
+(-f)+(f+u)=(-f)+(f+v).
+\]
+By associativity,
+\[
+((-f)+f)+u=((-f)+f)+v.
+\]
+Thus
+\[
+0+u=0+v,
+\]
+so $u=v$.
+\end{proof}
+
+\begin{lemma}[Zero and negatives]
+For all $f(x),g(x)\in\Qx$,
+\[
+f(x)\cdot0=0,\qquad -(-f(x))=f(x),\qquad (-f(x))(-g(x))=f(x)g(x).
+\]
+\end{lemma}
+
+\begin{proof}
+First,
+\[
+f\cdot0=f(0+0)=f\cdot0+f\cdot0.
+\]
+Adding the additive inverse of $f\cdot0$ to both sides gives $f\cdot0=0$.
+
+Next, since
+\[
+(-f)+f=0,
+\]
+the polynomial $f$ is an additive inverse of $-f$.  By uniqueness of additive
+inverses,
+\[
+-(-f)=f.
+\]
+
+For the product of negatives, first observe that
+\[
+fg+(-f)g=(f+(-f))g=0\cdot g=0.
+\]
+Therefore $(-f)g=-(fg)$.  Applying this with $g$ replaced by $-g$ gives
+\[
+(-f)(-g)=-(f(-g)).
+\]
+Also,
+\[
+fg+f(-g)=f(g+(-g))=f\cdot0=0,
+\]
+so $f(-g)=-(fg)$.  Hence
+\[
+(-f)(-g)=-(-(fg))=fg.
+\]
+\end{proof}
+
+\section{Divisibility}
+
+\begin{definition}[Divisibility]
+For $a(x),b(x)\in\Qx$, we say $a(x)$ divides $b(x)$, written
+\[
+a(x)\mid b(x),
+\]
+if there exists $q(x)\in\Qx$ such that
+\[
+b(x)=a(x)q(x).
+\]
+\end{definition}
+
+\section{The Division Algorithm in $\Qx$}
+
+For $\Qx$, degree plays the role that size plays in integer division.  Since
+degrees are nonnegative integers, we can use the well-ordering principle to pick
+a remainder of smallest degree.
+
+\begin{theorem}[Division algorithm in $\Qx$]
+Let $f(x),g(x)\in\Qx$ with $g(x)\neq0$.  Then there exist unique
+polynomials $q(x),r(x)\in\Qx$ such that
+\[
+f(x)=q(x)g(x)+r(x),
+\]
+where either
+\[
+r(x)=0
+\]
+or
+\[
+\deg(r)<\deg(g).
+\]
+\end{theorem}
+
+\begin{proof}
+\textbf{Existence.}
+Look at all possible remainders after subtracting multiples of $g$ from $f$:
+\[
+S=\{\,f(x)-q(x)g(x):q(x)\in\Qx\,\}.
+\]
+If $0\in S$, then $f=qg$ for some $q$, so
+\[
+f=qg+0,
+\]
+and the result holds with $r=0$.
+
+Now suppose $0\notin S$.  Then every element of $S$ is nonzero, so
+each element has a degree in $\mathbb{Z}_{\geq0}$.  Define
+\[
+D=\{\,\deg(s):s\in S\,\}\subseteq\mathbb{Z}_{\geq0}.
+\]
+The set $D$ is nonempty because $f-0g=f$ lies in $S$.  By the well-ordering
+principle, $D$ has a smallest element.  Choose $r\in S$ with minimum degree.
+Since $r\in S$, there exists $q\in\Qx$ such that
+\[
+r=f-qg.
+\]
+Equivalently,
+\[
+f=qg+r.
+\]
+
+It remains to show that $\deg(r)<\deg(g)$.  Suppose instead that
+\[
+\deg(r)\geq\deg(g).
+\]
+Write
+\[
+r(x)=a_mx^m+\cdots
+\qquad\text{and}\qquad
+g(x)=b_nx^n+\cdots,
+\]
+where $a_m,b_n\neq0$ and $m\geq n$.  Since $b_n\neq0$ and $b_n\in\mathbb{Q}$,
+the rational number $a_m/b_n$ exists.  Define
+\[
+r^*(x)=r(x)-\frac{a_m}{b_n}x^{m-n}g(x).
+\]
+The second term has leading term $a_mx^m$, so the leading term of $r$ cancels.
+Thus either $r^*=0$ or
+\[
+\deg(r^*)<\deg(r).
+\]
+Also,
+\[
+\begin{aligned}
+r^*
+&=f-qg-\frac{a_m}{b_n}x^{m-n}g\\
+&=f-\left(q+\frac{a_m}{b_n}x^{m-n}\right)g.
+\end{aligned}
+\]
+Therefore $r^*\in S$.  If $r^*=0$, then $0\in S$, which is not the case we are
+in.  If $r^*\neq0$, then $r^*$ is in $S$ and has smaller degree than $r$,
+contradicting how we chose $r$.  Therefore our assumption was false, and
+\[
+\deg(r)<\deg(g).
+\]
+
+\textbf{Uniqueness.}
+Suppose
+\[
+f=q_1g+r_1=q_2g+r_2,
+\]
+where $r_1$ and $r_2$ are both either zero or have degree less than $\deg(g)$.
+Subtracting gives
+\[
+g(q_1-q_2)=r_2-r_1.
+\]
+Assume $q_1\neq q_2$.  Then $q_1-q_2\neq0$, and since $\Qx$ has no
+zero divisors,
+\[
+g(q_1-q_2)\neq0.
+\]
+Hence
+\[
+\deg(g(q_1-q_2))=\deg(g)+\deg(q_1-q_2)\geq\deg(g).
+\]
+But $r_2-r_1$ is either zero or has degree strictly less than $\deg(g)$, since
+both $r_1$ and $r_2$ have degree less than $\deg(g)$.  This is impossible.
+Therefore $q_1=q_2$.  Substituting back gives $r_1=r_2$.
+\end{proof}
+
+\section{Math}
+%%%%%%%%%TODO: prove that c \in \q are the only units in \qx %%%%%%%%%
+
 
 
 
