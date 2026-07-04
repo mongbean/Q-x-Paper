@@ -38,34 +38,7 @@
 \input{Division.tex}
 
 \section{Euclid's Algorithm}
-%%%%%%%%%TODO: prove that c \in \q are the only units in \qx %%%%%%%%%
-\begin{definition}
-    Define \textbf{Euclids Algorithm} on $f(x), g(x) \in \qx$ to produce $r,q \in \qx$ such that 
-    \[
-        f = q_1g + r_1 \qquad 
-        g = q_2r_1+r_2 \qquad
-        r_{n-2} = q_n r_{n-1} + r_n
-    \]
-\end{definition}
-\begin{lemma} For any $f(x), g(x) \in \qx$, the Euclidean Algorithm generates an $n \in \bZ^+$ such that $r_n=0$.\end{lemma}
-\begin{proof}
-    Let $S=\left\{ f(x) \in \qx \;\middle | \;\exists \, g(x) \text{ s.t. } r_i \neq 0 \; \forall i \in \bZ \right\}$. For the sake of contradiction, $S$ is not empty. By the well-ordering principle, there exists a least element $l$. Performing Euclid's Algorithm on $(l,g)$, we have:
-    \begin{gather*}
-        g = q_1*l + r_1 \\
-        l = q_2 r_1 + r_2
-    \end{gather*}
-If $(g,l)$ does not reach 0, $(l, r_1)$ will also not reach 0, as they generate the same values. Thus, $r_1\in S$, but $r_l<l$ by the division algorithm, which is a contradiction. Thus, $S$ must be empty.
-\end{proof}
-
-\begin{lemma} For any $f(x), g(x) \in \qx$, if the Euclidean Algorithm generates $r_n=0$, $r_{n-1} = \gcd(f, g)$.\end{lemma}
-\begin{proof}
-    Let $S=\left\{ f(x) \in \qx \;\middle | \;\exists \, g(x) \text{ s.t. } r_{n-1} \neq \gcd(f, g) \right\}$. For the sake of contradiction, $S$ is not empty. By the well-ordering principle, there exists a least element $l$. Performing Euclid's Algorithm on $(l,g)$, we have:
-    \begin{gather*}
-        g = q_1*l + r_1 \\
-    \end{gather*}
-If $\gcd(g,l) = d$, $d \mid g$ and $d \mid l$. Since $b>l$, $\gcd(l, r_1)$ remains $d$. However, the Euclidean Algorithm on $(r_1, l)$ generates the same values as $(b, l)$. Thus, $r_1\in S$, but $r_l<l$ by the division algorithm, which is a contradiction. Thus, $S$ must be empty.
-\end{proof}
-
+\input{Euclid's Algorithm.tex}
 
 
 
