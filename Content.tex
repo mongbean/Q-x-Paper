@@ -320,9 +320,13 @@ b(x)=a(x)q(x).
 
 \section{The Division Algorithm in $\Qx$}
 
-For $\Qx$, degree plays the role that size plays in integer division.  Since
-degrees are nonnegative integers, we can use the well-ordering principle to pick
-a remainder of smallest degree.
+For $\Qx$, the norm
+\[
+\|f(x)\|=2^{\deg(f(x))}
+\]
+plays the role that size plays in integer division.  Since norms of nonzero
+polynomials are positive integers, we can use the well-ordering principle to
+pick a remainder of smallest norm.
 
 \begin{theorem}[Division algorithm in $\Qx$]
 Let $f(x),g(x)\in\Qx$ with $g(x)\neq0$.  Then there exist unique
@@ -336,7 +340,7 @@ r(x)=0
 \]
 or
 \[
-\deg(r)<\deg(g).
+\|r(x)\|<\|g(x)\|.
 \]
 \end{theorem}
 
@@ -353,12 +357,12 @@ f=qg+0,
 and the result holds with $r=0$.
 
 Now suppose $0\notin S$.  Then every element of $S$ is nonzero, so
-each element has a degree in $\mathbb{Z}_{\geq0}$.  Define
+each element has a norm in $\mathbb{Z}^+$.  Define
 \[
-D=\{\,\deg(s):s\in S\,\}\subseteq\mathbb{Z}_{\geq0}.
+D=\{\,\|s(x)\|:s(x)\in S\,\}\subseteq\mathbb{Z}^+.
 \]
 The set $D$ is nonempty because $f-0g=f$ lies in $S$.  By the well-ordering
-principle, $D$ has a smallest element.  Choose $r\in S$ with minimum degree.
+principle, $D$ has a smallest element.  Choose $r\in S$ with minimum norm.
 Since $r\in S$, there exists $q\in\Qx$ such that
 \[
 r=f-qg.
@@ -368,9 +372,9 @@ Equivalently,
 f=qg+r.
 \]
 
-It remains to show that $\deg(r)<\deg(g)$.  Suppose instead that
+It remains to show that $\|r(x)\|<\|g(x)\|$.  Suppose instead that
 \[
-\deg(r)\geq\deg(g).
+\|r(x)\|\geq\|g(x)\|.
 \]
 Write
 \[
@@ -378,15 +382,16 @@ r(x)=a_mx^m+\cdots
 \qquad\text{and}\qquad
 g(x)=b_nx^n+\cdots,
 \]
-where $a_m,b_n\neq0$ and $m\geq n$.  Since $b_n\neq0$ and $b_n\in\mathbb{Q}$,
-the rational number $a_m/b_n$ exists.  Define
+where $a_m,b_n\neq0$, $m=\deg(r)$, and $n=\deg(g)$.  Since
+$\|r(x)\|\geq\|g(x)\|$ means $2^m\geq2^n$, we get $m\geq n$.  Since $b_n\neq0$
+and $b_n\in\mathbb{Q}$, the rational number $a_m/b_n$ exists.  Define
 \[
 r^*(x)=r(x)-\frac{a_m}{b_n}x^{m-n}g(x).
 \]
 The second term has leading term $a_mx^m$, so the leading term of $r$ cancels.
 Thus either $r^*=0$ or
 \[
-\deg(r^*)<\deg(r).
+\|r^*(x)\|<\|r(x)\|.
 \]
 Also,
 \[
@@ -397,10 +402,10 @@ r^*
 \end{aligned}
 \]
 Therefore $r^*\in S$.  If $r^*=0$, then $0\in S$, which is not the case we are
-in.  If $r^*\neq0$, then $r^*$ is in $S$ and has smaller degree than $r$,
+in.  If $r^*\neq0$, then $r^*$ is in $S$ and has smaller norm than $r$,
 contradicting how we chose $r$.  Therefore our assumption was false, and
 \[
-\deg(r)<\deg(g).
+\|r(x)\|<\|g(x)\|.
 \]
 
 \textbf{Uniqueness.}
@@ -408,7 +413,7 @@ Suppose
 \[
 f=q_1g+r_1=q_2g+r_2,
 \]
-where $r_1$ and $r_2$ are both either zero or have degree less than $\deg(g)$.
+where $r_1$ and $r_2$ are both either zero or have norm less than $\|g(x)\|$.
 Subtracting gives
 \[
 g(q_1-q_2)=r_2-r_1.
@@ -420,10 +425,18 @@ g(q_1-q_2)\neq0.
 \]
 Hence
 \[
-\deg(g(q_1-q_2))=\deg(g)+\deg(q_1-q_2)\geq\deg(g).
+\begin{aligned}
+\|g(x)(q_1(x)-q_2(x))\|
+&=2^{\deg(g(q_1-q_2))}\\
+&=2^{\deg(g)+\deg(q_1-q_2)}\\
+&=\|g(x)\|\cdot\|q_1(x)-q_2(x)\|\\
+&\geq\|g(x)\|.
+\end{aligned}
 \]
-But $r_2-r_1$ is either zero or has degree strictly less than $\deg(g)$, since
-both $r_1$ and $r_2$ have degree less than $\deg(g)$.  This is impossible.
+But $r_2-r_1$ is either zero or has norm strictly less than $\|g(x)\|$, since
+each of $r_1$ and $r_2$ is either zero or has norm less than $\|g(x)\|$, so
+their degrees are both less than $\deg(g)$ when they are nonzero.  This is
+impossible.
 Therefore $q_1=q_2$.  Substituting back gives $r_1=r_2$.
 \end{proof}
 %%TODO: GCD
