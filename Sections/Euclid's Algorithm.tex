@@ -11,7 +11,7 @@
 \begin{proof}
     Let $S=\left\{ f(x) \in \qx \;\middle | \;\exists \, g(x) \text{ s.t. } r_i \neq 0 \; \forall i \in \bZ \right\}$. For the sake of contradiction, $S$ is not empty. By the well-ordering principle, there exists a least element $l$. Performing Euclid's Algorithm on $(l,g)$, we have:
     \begin{gather*}
-        g = q_1*l + r_1 \\
+        g = q_1l + r_1 \\
         l = q_2 r_1 + r_2
     \end{gather*}
 If $(g,l)$ does not reach 0, $(l, r_1)$ will also not reach 0, as they generate the same values. Thus, $r_1\in S$, but $r_l<l$ by the division algorithm, which is a contradiction. Thus, $S$ must be empty.
@@ -21,7 +21,9 @@ If $(g,l)$ does not reach 0, $(l, r_1)$ will also not reach 0, as they generate 
 \begin{proof}
     Let $S=\left\{ f(x) \in \qx \;\middle | \;\exists \, g(x) \text{ s.t. } r_{n-1} \neq \gcd(f, g) \right\}$. For the sake of contradiction, $S$ is not empty. By the well-ordering principle, there exists a least element $l$. Performing Euclid's Algorithm on $(l,g)$, we have:
     \begin{gather*}
-        g = q_1*l + r_1 \\
+        g = q_1l + r_1 \\
     \end{gather*}
 If $\gcd(g,l) = d$, $d \mid g$ and $d \mid l$. Since $b>l$, $\gcd(l, r_1)$ remains $d$. However, the Euclidean Algorithm on $(r_1, l)$ generates the same values as $(b, l)$. Thus, $r_1\in S$, but $r_l<l$ by the division algorithm, which is a contradiction. Thus, $S$ must be empty.
 \end{proof}
+
+

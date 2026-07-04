@@ -1,1 +1,24 @@
+\begin{theorem}Each remainder in Euclid's algorithm on $f(x), g(x) \in \qx$ can be expressed as a linear combination of $f(x)$ and $g(x)$, or \[a(x), b(x) \in \qx \qquad f(x)a_n(x)+g(x)b_n(x) = r_n(x)\] \end{theorem}
+\begin{proof}
+    Since $f = q_1g+r_1$, $r_1=f-q_1g$. In addition, since $r_2=g-q_2r_1=g-q_2g+q_1q_2f$, $r_2$ can also be expressed as a linear combination of $f(x)$ and $g(x)$. Let 
+    \[S \coloneq \left \{ k \in \bZ^+ \mid r_k \neq f(x)a(x)+g(x)b(x) \forall  a(x), b(x) \in \qx \right\}\]
+    For the sake of contradiction, $S$ is not empty. Thus, by the well-ordering principle, there exists a least element $l \in S$. However, $1, 2 \notin S$, so $l>2$ and $l-2, l-1 \in \bZ^+$. Since $l$ is the least element of $S$, $l-2, l-1\notin S$. 
+    \begin{align*} \exists a_1(x), b_1(x) \in \qx &\qquad a_1f+b_1g = r_{l-1} \\
+        \exists a_2(x), b_2(x) \in \qx &\qquad a_2f+b_2g = r_{l-2}
+    \end{align*}
+    Thus, by the Euclidean Algorithm, we know that 
+    \begin{align*}
+        r_{l-2} = q_l r_{l-1}+r_l \\
+        a_2f+b_2g = q_l(a_1f+b_1g)+r_l \\
+        r_l = (a_2-q_1a_1)f + (b_2-b_1)g
+    \end{align*}
+    As $(a_2-q_1a_1), (b_2-b_1) \in \qx$, $r_l$ can thus be written as a linear combination of $f(x)$ and $g(x)$. However, since $l \in S$, this is a contradiction and S must be empty. 
+
+    
+\end{proof}
+\begin{corollary} (Bezout's) The greatest common divisor of $f(x), g(x) \in \qx$ can be expressed as a linear combination of $f(x)$ and $g(x)$, or \[k_1(x), k_2(x) \in \qx \qquad f(x)k_1(x)+g(x)k_2(x) = \gcd(f(x), g(x)) \]
+\end{corollary}
+\begin{proof}
+    With $r_n=0$, the Euclidean algorithm always produces $r_{n-1} = \gcd(f(x), g(x))$.
+\end{proof}
 
