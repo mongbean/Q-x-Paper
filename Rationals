@@ -133,4 +133,4 @@ then
 \[
 (a,b)\mid(c,d)
 \]
-Therefore, define $\frac{p}{q}$ for $p,q\in\mathbb{Q}$ and $p\neq0$ to be the unique solution $x$ to $px=q$. Note also that this is equivalent to the fraction notation of rationals since $\frac{(a,1)}{(b,1)}=(a,b)=\frac{a}{b}$.
+Therefore, define $\frac{p}{q}$ for $p,q\in\mathbb{Q}$ and $p\neq0$ to be the unique solution $x$ to $px=q$. Note also that this is equivalent to the fraction notation of rationals since $\frac{(a,1)}{(b,1)}=(a,b)=\frac{a}{b}$. Then, define $p^{-1}$ to be $\frac{(1,1)}{p}$.
