@@ -1,0 +1,22 @@
+\begin{lemma}[No zero divisors in $\mathbb{Q}$]
+If $a,b\in\mathbb{Q}$ and $ab=0$, then $a=0$ or $b=0$.
+\end{lemma}
+
+\begin{proof}
+Suppose $ab=0$.  If $a=0$, there is nothing to prove.  Now assume $a\neq0$.
+Then $a^{-1}$ exists in
+$\mathbb{Q}$.  Multiplying both sides of $ab=0$ by $a^{-1}$ gives
+\[
+a^{-1}(ab)=a^{-1}\cdot0.
+\]
+By associativity, the left side is
+\[
+(a^{-1}a)b=1b=b.
+\]
+Also $a^{-1}\cdot0=0$: indeed,
+\[
+a^{-1}\cdot0=a^{-1}(0+0)=a^{-1}\cdot0+a^{-1}\cdot0,
+\]
+and adding the additive inverse of $a^{-1}\cdot0$ to both sides gives
+$a^{-1}\cdot0=0$.  Hence $b=0$.  Therefore $a=0$ or $b=0$.
+\end{proof}

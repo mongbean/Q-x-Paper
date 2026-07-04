@@ -1,0 +1,48 @@
+\begin{lemma} $\sum\limits _{i=i_0}^{n}  a_i + \sum\limits _{i=i_0}^{n}  b_i = \sum\limits _{i=i_0}^{n} (a_i+b_i)$\\
+Proof. \normalfont Note that \[\sum_{i=i_0}^{i_0}  a_i+ \sum_{i=i_0}^{i_0}  b_i = a_{i_0}+b_{i_0}=\sum_{i=i_0}^{i_0}  (a_i+b_i)\]
+Let $S=\left \{k \in \mathbb{Z}^+  \; \middle |  \;\sum\limits_{i=i_0}^{i_0+k}  a_i +  \sum\limits_{i=i_0}^{i_0+k}  b_i \neq  \sum\limits_{i=i_0}^{i_0+k} ( a_i +b_i)\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the Well-Ordering Principle, there exists a least element $l \in S$. \\
+If $k=1$: \[
+ \sum_{i=i_0}^{i_0+1}  a_i+ \sum_{i=i_0}^{i_0+1}  b_i = a_{i_0+1}+ a_{i_0}+b_{i_0+1}+b_{i_0}= (a_{i_0+1}+b_{i_0+1})+(a_{i_0}+b_{i_0}) =\sum_{i=i_0}^{i_0+1}  (a_i+b_i)
+\]
+Thus, $1 \notin S$ and so $l>1$ by NIBZO. Since $l-1 \in \mathbb{Z}$ yet $l-1 \notin S$, 
+\begin{align*} \sum\limits _{i=i_0}^{i_0+l-1}  a_i + \sum\limits _{i=i_0}^{i_0+l-1}  b_i &= \sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i) \\
+a_l + b_l+\sum\limits _{i=i_0}^{i_0+l-1}  a_i + \sum\limits _{i=i_0}^{i_0+l-1}  b_i &= a_l + b_l+\sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i)\\
+a_l + \sum\limits _{i=i_0}^{i_0+l-1}  a_i + b_l+\sum\limits _{i=i_0}^{i_0+l-1}  b_i &= (a_l + b_l)+\sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i)\\
+\sum\limits _{i=i_0}^{i_0+l}  a_i + \sum\limits _{i=i_0}^{i_0+l}  b_i &= \sum\limits _{i=i_0}^{i_0+l} (a_i+b_i)\\
+\end{align*}
+However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
+\end{lemma}
+\begin{lemma}
+$\sum\limits _{i=i_0}^{n} ca_i = c\sum\limits _{i=i_0}^{n} a_i$\end{lemma}
+\begin{proof} \normalfont Note that \[
+\sum\limits _{i=i_0}^{i_0} ca_i = ca_{i_0}=c\sum\limits _{i=i_0}^{i_0} a_i
+\] 
+and that 
+\[
+\sum\limits _{i=i_0}^{i_0+1} ca_i = ca_{i_0} + ca_{i_0+1}=c\sum\limits _{i=i_0}^{i_0+1} a_i
+\] 
+Let $S=\left \{k \in \mathbb{Z}^+  \;\middle| \;\sum\limits_{i=i_0}^{i_0+k}  ca_i \neq  c\sum\limits_{i=i_0}^{i_0+k} a_i\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the well-ordering principle, there exists a least element $l \in S$. Since $1 \notin S$, $l>1$ by NIBZO. As $l-1 \in \mathbb{Z}$ yet $l-1 \notin S$, 
+\begin{align*}
+    \sum\limits_{i=i_0}^{i_0+l-1}  ca_i &=  c\sum\limits_{i=i_0}^{i_0+l-1} a_i \\
+    ca_l + \sum\limits_{i=i_0}^{i_0+l-1}  ca_i &=  ca_l+c\sum\limits_{i=i_0}^{i_0+l-1} a_i \\
+   \sum\limits_{i=i_0}^{i_0+l}  ca_i &=  c\sum\limits_{i=i_0}^{i_0+l} a_i 
+\end{align*}
+However, since $l \in S$, this is a contradiction. Thus, S must be empty.\end{proof}
+
+
+
+
+\begin{lemma} $\prod\limits _{i=i_0}^{n}  a_i  \prod\limits _{i=i_0}^{n}  b_i = \prod\limits _{i=i_0}^{n} a_ib_i$\end{lemma}
+\begin{proof}
+ \normalfont Note that \[\prod_{i=i_0}^{i_0}  a_i \prod_{i=i_0}^{i_0}  b_i = a_{i_0}b_{i_0}=\prod_{i=i_0}^{i_0}  a_ib_i\]
+Let $S=\left \{k \in \mathbb{Z}^+  \; \middle |  \;\prod\limits_{i=i_0}^{i_0+k}  a_i   \prod\limits_{i=i_0}^{i_0+k}  b_i \neq  \prod\limits_{i=i_0}^{i_0+k}  a_i b_i\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the Well-Ordering Principle, there exists a least element $l \in S$. \\
+If $k=1$: \[
+ \prod_{i=i_0}^{i_0+1}  a_i \prod_{i=i_0}^{i_0+1}  b_i = a_{i_0+1} a_{i_0}\cdot b_{i_0+1}b_{i_0}= (a_{i_0+1}b_{i_0+1})(a_{i_0}b_{i_0}) =\prod_{i=i_0}^{i_0+1}  a_ib_i
+\]
+Thus, $1 \notin S$ and so $l>1$ by NIBZO. Since $l-1 \in \mathbb{Z}$ yet $l-1 \notin S$, 
+\begin{align*} \prod\limits _{i=i_0}^{i_0+l-1}  a_i  \prod\limits _{i=i_0}^{i_0+l-1}  b_i &= \prod\limits _{i=i_0}^{i_0+l-1} a_ib_i \\
+a_l  b_l \cdot \prod\limits _{i=i_0}^{i_0+l-1}  a_i  \prod\limits _{i=i_0}^{i_0+l-1}  b_i &= a_l  b_l \cdot\prod\limits _{i=i_0}^{i_0+l-1} a_ib_i\\
+(a_l  \prod\limits _{i=i_0}^{i_0+l-1}  a_i) \cdot (b_l \prod\limits _{i=i_0}^{i_0+l-1}  b_i) &= (a_l  b_l)\prod\limits _{i=i_0}^{i_0+l-1} a_ib_i\\
+\prod\limits _{i=i_0}^{i_0+l}  a_i  \prod\limits _{i=i_0}^{i_0+l}  b_i &= \prod\limits _{i=i_0}^{i_0+l} a_ib_i\\
+\end{align*}
+However, since $l \in S$, this is a contradiction. Thus, S must be empty. \end{proof}

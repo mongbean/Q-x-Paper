@@ -63,28 +63,7 @@ element of $S$.  Therefore $S$ is empty.
 \end{proof}
 
 \section{Rationals}
-\begin{lemma}[No zero divisors in $\mathbb{Q}$]
-If $a,b\in\mathbb{Q}$ and $ab=0$, then $a=0$ or $b=0$.
-\end{lemma}
-
-\begin{proof}
-Suppose $ab=0$.  If $a=0$, there is nothing to prove.  Now assume $a\neq0$.
-Then $a^{-1}$ exists in
-$\mathbb{Q}$.  Multiplying both sides of $ab=0$ by $a^{-1}$ gives
-\[
-a^{-1}(ab)=a^{-1}\cdot0.
-\]
-By associativity, the left side is
-\[
-(a^{-1}a)b=1b=b.
-\]
-Also $a^{-1}\cdot0=0$: indeed,
-\[
-a^{-1}\cdot0=a^{-1}(0+0)=a^{-1}\cdot0+a^{-1}\cdot0,
-\]
-and adding the additive inverse of $a^{-1}\cdot0$ to both sides gives
-$a^{-1}\cdot0=0$.  Hence $b=0$.  Therefore $a=0$ or $b=0$.
-\end{proof}
+\input{rationals.tex}
 
 \section{The Ring $\Qx$}
 
@@ -129,16 +108,18 @@ have $0_{\Qx}\neq1_{\Qx}$.
     \]
 with the following properties:
 \begin{itemize}
-    \item $\| f(x)\| \cdot\| g(x)\| = \| f(x)g(x)\|$ \\
-    \textit{Proof.} 
-    \item For any $c(x) \in \qx ^ {\times}$, $\|c(x)\| = 1$.\\
-\textit{Proof.} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$. 
+    \item $\| f(x)\| \cdot\| g(x)\| = \| f(x)g(x)\|$ 
+    \begin{proof}
+        % todo: proof
+    \end{proof}
+    \item For any $c(x) \in \qx ^ {\times}$, $\|c(x)\| = 1$.
+\begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
 \end{itemize}
 \end{definition}
 
 \begin{lemma}[Multiplication]
 
-%%%TODO: this is not rigorous
+%%%TODO: this is not rigorous (use set not)
 For multiplication, if
 \[
 f(x)=a_0+a_1x+\cdots+a_mx^m
@@ -319,127 +300,7 @@ b(x)=a(x)q(x).
 \end{definition}
 
 \section{The Division Algorithm in $\Qx$}
-
-For $\Qx$, the norm
-\[
-\|f(x)\|=2^{\deg(f(x))}
-\]
-plays the role that size plays in integer division.  Since norms of nonzero
-polynomials are positive integers, we can use the well-ordering principle to
-pick a remainder of smallest norm.
-
-\begin{theorem}[Division algorithm in $\Qx$]
-Let $f(x),g(x)\in\Qx$ with $g(x)\neq0$.  Then there exist unique
-polynomials $q(x),r(x)\in\Qx$ such that
-\[
-f(x)=q(x)g(x)+r(x),
-\]
-where either
-\[
-r(x)=0
-\]
-or
-\[
-\|r(x)\|<\|g(x)\|.
-\]
-\end{theorem}
-
-\begin{proof}
-\textbf{Existence.}
-Look at all possible remainders after subtracting multiples of $g$ from $f$:
-\[
-S=\{\,f(x)-q(x)g(x):q(x)\in\Qx\,\}.
-\]
-If $0\in S$, then $f=qg$ for some $q$, so
-\[
-f=qg+0,
-\]
-and the result holds with $r=0$.
-
-Now suppose $0\notin S$.  Then every element of $S$ is nonzero, so
-each element has a norm in $\mathbb{Z}^+$.  Define
-\[
-D=\{\,\|s(x)\|:s(x)\in S\,\}\subseteq\mathbb{Z}^+.
-\]
-The set $D$ is nonempty because $f-0g=f$ lies in $S$.  By the well-ordering
-principle, $D$ has a smallest element.  Choose $r\in S$ with minimum norm.
-Since $r\in S$, there exists $q\in\Qx$ such that
-\[
-r=f-qg.
-\]
-Equivalently,
-\[
-f=qg+r.
-\]
-
-It remains to show that $\|r(x)\|<\|g(x)\|$.  Suppose instead that
-\[
-\|r(x)\|\geq\|g(x)\|.
-\]
-Write
-\[
-r(x)=a_mx^m+\cdots
-\qquad\text{and}\qquad
-g(x)=b_nx^n+\cdots,
-\]
-where $a_m,b_n\neq0$, $m=\deg(r)$, and $n=\deg(g)$.  Since
-$\|r(x)\|\geq\|g(x)\|$ means $2^m\geq2^n$, we get $m\geq n$.  Since $b_n\neq0$
-and $b_n\in\mathbb{Q}$, the rational number $a_m/b_n$ exists.  Define
-\[
-r^*(x)=r(x)-\frac{a_m}{b_n}x^{m-n}g(x).
-\]
-The second term has leading term $a_mx^m$, so the leading term of $r$ cancels.
-Thus either $r^*=0$ or
-\[
-\|r^*(x)\|<\|r(x)\|.
-\]
-Also,
-\[
-\begin{aligned}
-r^*
-&=f-qg-\frac{a_m}{b_n}x^{m-n}g\\
-&=f-\left(q+\frac{a_m}{b_n}x^{m-n}\right)g.
-\end{aligned}
-\]
-Therefore $r^*\in S$.  If $r^*=0$, then $0\in S$, which is not the case we are
-in.  If $r^*\neq0$, then $r^*$ is in $S$ and has smaller norm than $r$,
-contradicting how we chose $r$.  Therefore our assumption was false, and
-\[
-\|r(x)\|<\|g(x)\|.
-\]
-
-\textbf{Uniqueness.}
-Suppose
-\[
-f=q_1g+r_1=q_2g+r_2,
-\]
-where $r_1$ and $r_2$ are both either zero or have norm less than $\|g(x)\|$.
-Subtracting gives
-\[
-g(q_1-q_2)=r_2-r_1.
-\]
-Assume $q_1\neq q_2$.  Then $q_1-q_2\neq0$, and since $\Qx$ has no
-zero divisors,
-\[
-g(q_1-q_2)\neq0.
-\]
-Hence
-\[
-\begin{aligned}
-\|g(x)(q_1(x)-q_2(x))\|
-&=2^{\deg(g(q_1-q_2))}\\
-&=2^{\deg(g)+\deg(q_1-q_2)}\\
-&=\|g(x)\|\cdot\|q_1(x)-q_2(x)\|\\
-&\geq\|g(x)\|.
-\end{aligned}
-\]
-But $r_2-r_1$ is either zero or has norm strictly less than $\|g(x)\|$, since
-each of $r_1$ and $r_2$ is either zero or has norm less than $\|g(x)\|$, so
-their degrees are both less than $\deg(g)$ when they are nonzero.  This is
-impossible.
-Therefore $q_1=q_2$.  Substituting back gives $r_1=r_2$.
-\end{proof}
-%%TODO: GCD
+\input{division.tex}
 
 \section{Euclid's Algorithm}
 %%%%%%%%%TODO: prove that c \in \q are the only units in \qx %%%%%%%%%
@@ -478,51 +339,5 @@ Conclude with the big ideas!
 
 \section*{Appendix A: Summation and Product Lemmas}
 
-\begin{lemma} $\sum\limits _{i=i_0}^{n}  a_i + \sum\limits _{i=i_0}^{n}  b_i = \sum\limits _{i=i_0}^{n} (a_i+b_i)$\\
-Proof. \normalfont Note that \[\sum_{i=i_0}^{i_0}  a_i+ \sum_{i=i_0}^{i_0}  b_i = a_{i_0}+b_{i_0}=\sum_{i=i_0}^{i_0}  (a_i+b_i)\]
-Let $S=\left \{k \in \mathbb{Z}^+  \; \middle |  \;\sum\limits_{i=i_0}^{i_0+k}  a_i +  \sum\limits_{i=i_0}^{i_0+k}  b_i \neq  \sum\limits_{i=i_0}^{i_0+k} ( a_i +b_i)\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the Well-Ordering Principle, there exists a least element $l \in S$. \\
-If $k=1$: \[
- \sum_{i=i_0}^{i_0+1}  a_i+ \sum_{i=i_0}^{i_0+1}  b_i = a_{i_0+1}+ a_{i_0}+b_{i_0+1}+b_{i_0}= (a_{i_0+1}+b_{i_0+1})+(a_{i_0}+b_{i_0}) =\sum_{i=i_0}^{i_0+1}  (a_i+b_i)
-\]
-Thus, $1 \notin S$ and so $l>1$ by NIBZO. Since $l-1 \in \mathbb{Z}$ yet $l-1 \notin S$, 
-\begin{align*} \sum\limits _{i=i_0}^{i_0+l-1}  a_i + \sum\limits _{i=i_0}^{i_0+l-1}  b_i &= \sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i) \\
-a_l + b_l+\sum\limits _{i=i_0}^{i_0+l-1}  a_i + \sum\limits _{i=i_0}^{i_0+l-1}  b_i &= a_l + b_l+\sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i)\\
-a_l + \sum\limits _{i=i_0}^{i_0+l-1}  a_i + b_l+\sum\limits _{i=i_0}^{i_0+l-1}  b_i &= (a_l + b_l)+\sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i)\\
-\sum\limits _{i=i_0}^{i_0+l}  a_i + \sum\limits _{i=i_0}^{i_0+l}  b_i &= \sum\limits _{i=i_0}^{i_0+l} (a_i+b_i)\\
-\end{align*}
-However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
-\end{lemma}
-\begin{lemma}
-$\sum\limits _{i=i_0}^{n} ca_i = c\sum\limits _{i=i_0}^{n} a_i$
-Proof. \normalfont Note that \[
-\sum\limits _{i=i_0}^{i_0} ca_i = ca_{i_0}=c\sum\limits _{i=i_0}^{i_0} a_i
-\] 
-and that 
-\[
-\sum\limits _{i=i_0}^{i_0+1} ca_i = ca_{i_0} + ca_{i_0+1}=c\sum\limits _{i=i_0}^{i_0+1} a_i
-\] 
-Let $S=\left \{k \in \mathbb{Z}^+  \;\middle| \;\sum\limits_{i=i_0}^{i_0+k}  ca_i \neq  c\sum\limits_{i=i_0}^{i_0+k} a_i\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the well-ordering principle, there exists a least element $l \in S$. Since $1 \notin S$, $l>1$ by NIBZO. As $l-1 \in \mathbb{Z}$ yet $l-1 \notin S$, 
-\begin{align*}
-    \sum\limits_{i=i_0}^{i_0+l-1}  ca_i &=  c\sum\limits_{i=i_0}^{i_0+l-1} a_i \\
-    ca_l + \sum\limits_{i=i_0}^{i_0+l-1}  ca_i &=  ca_l+c\sum\limits_{i=i_0}^{i_0+l-1} a_i \\
-   \sum\limits_{i=i_0}^{i_0+l}  ca_i &=  c\sum\limits_{i=i_0}^{i_0+l} a_i 
-\end{align*}
-However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
-\end{lemma}
+\input{sumprod.tex}
 
-
-
-\begin{lemma} $\prod\limits _{i=i_0}^{n}  a_i  \prod\limits _{i=i_0}^{n}  b_i = \prod\limits _{i=i_0}^{n} a_ib_i$\\
-Proof. \normalfont Note that \[\prod_{i=i_0}^{i_0}  a_i \prod_{i=i_0}^{i_0}  b_i = a_{i_0}b_{i_0}=\prod_{i=i_0}^{i_0}  a_ib_i\]
-Let $S=\left \{k \in \mathbb{Z}^+  \; \middle |  \;\prod\limits_{i=i_0}^{i_0+k}  a_i   \prod\limits_{i=i_0}^{i_0+k}  b_i \neq  \prod\limits_{i=i_0}^{i_0+k}  a_i b_i\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the Well-Ordering Principle, there exists a least element $l \in S$. \\
-If $k=1$: \[
- \prod_{i=i_0}^{i_0+1}  a_i \prod_{i=i_0}^{i_0+1}  b_i = a_{i_0+1} a_{i_0}\cdot b_{i_0+1}b_{i_0}= (a_{i_0+1}b_{i_0+1})(a_{i_0}b_{i_0}) =\prod_{i=i_0}^{i_0+1}  a_ib_i
-\]
-Thus, $1 \notin S$ and so $l>1$ by NIBZO. Since $l-1 \in \mathbb{Z}$ yet $l-1 \notin S$, 
-\begin{align*} \prod\limits _{i=i_0}^{i_0+l-1}  a_i  \prod\limits _{i=i_0}^{i_0+l-1}  b_i &= \prod\limits _{i=i_0}^{i_0+l-1} a_ib_i \\
-a_l  b_l \cdot \prod\limits _{i=i_0}^{i_0+l-1}  a_i  \prod\limits _{i=i_0}^{i_0+l-1}  b_i &= a_l  b_l \cdot\prod\limits _{i=i_0}^{i_0+l-1} a_ib_i\\
-(a_l  \prod\limits _{i=i_0}^{i_0+l-1}  a_i) \cdot (b_l \prod\limits _{i=i_0}^{i_0+l-1}  b_i) &= (a_l  b_l)\prod\limits _{i=i_0}^{i_0+l-1} a_ib_i\\
-\prod\limits _{i=i_0}^{i_0+l}  a_i  \prod\limits _{i=i_0}^{i_0+l}  b_i &= \prod\limits _{i=i_0}^{i_0+l} a_ib_i\\
-\end{align*}
-However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
-\end{lemma}
