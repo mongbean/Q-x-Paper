@@ -1,8 +1,17 @@
-\section{Introduction}
+%\section{Introduction}
+
+%\section{History}
+%Historical background is often nice.
 
 
-\section{History}
-Historical background is often nice.
+
+
+\section{Integers}
+\input{Integers.tex}
+
+%================================================================
+%summation, big pi, exponents, power rules
+%================================================================
 
 \begin{definition}
      Define \textbf{summation}, or $\sum_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
@@ -14,43 +23,13 @@ Historical background is often nice.
         \prod_{i=i_0}^{i_0} = a_{i_0} \qquad \prod_{i=i_0}^{n}a_i=a_n \cdot \prod_{i=i_0}^{n-1}  a_i
      \]
 \end{definition}
-
-\section{Integers}
-\begin{lemma}[NIBZO]
-There is no integer strictly between $0$ and $1$.  Equivalently, if
-$n\in\mathbb{Z}$ and
-\[
-0<n<1,
-\]
-then such an $n$ cannot exist.
-\end{lemma}
-
-\begin{proof}
-Suppose, for contradiction, that there is an integer strictly between $0$ and
-$1$.  Put
-\[
-S=\{n\in\mathbb{Z}:0<n<1\}.
-\]
-Then $S$ is nonempty and $S\subseteq\mathbb{Z}_{\geq0}$.  By the well-ordering
-principle, $S$ has a least element.  Call it $m$.
-
-Since $0<m$, multiplicative closure of positive integers gives $0<m^2$.  Since
-$m<1$ and $m>0$, multiplying the inequality $m<1$ by the positive integer $m$
-gives
-\[
-m^2<m.
-\]
-Thus $m^2$ is also an integer satisfying
-\[
-0<m^2<m<1.
-\]
-So $m^2\in S$, but $m^2<m$.  This contradicts the choice of $m$ as the least
-element of $S$.  Therefore $S$ is empty.
-\end{proof}
 %%todo: power rules
 
+%================================================================
+%================================================================
+
 \section{Rationals}
-\input{rationals.tex}
+\input{Rationals.tex}
 
 \section{The Ring $\Qx$}
 
