@@ -1,3 +1,4 @@
+
 \begin{definition}[The polynomial ring $\Qx$]
 We define a polynominal $f(x) \in \Qx$ with degree $n$ if it can be written as
 \[
@@ -55,26 +56,26 @@ with the following properties:
 \end{itemize}
 \end{definition}
 
-\begin{lemma}[Multiplication]
+% \begin{lemma}[Multiplication] i commented this out bc i kinda did it with set notation up there
 
-%%%TODO: this is not rigorous (use set not)
-For multiplication, if
-\[
-f(x)=a_0+a_1x+\cdots+a_mx^m
-\qquad\text{and}\qquad
-g(x)=b_0+b_1x+\cdots+b_nx^n,
-\]
-then
-\[
-f(x)g(x)=c_0+c_1x+\cdots+c_{m+n}x^{m+n},
-\]
-where each coefficient $c_k$ is found by adding all products $a_ib_j$ for which
-the exponents satisfy $i+j=k$.  For example,
-\[
-c_0=a_0b_0,\qquad c_1=a_0b_1+a_1b_0,\qquad
-c_{m+n}=a_mb_n.
-\]
-\end{lemma}
+% %%%TODO: this is not rigorous (use set not)
+% For multiplication, if
+% \[
+% f(x)=a_0+a_1x+\cdots+a_mx^m
+% \qquad\text{and}\qquad
+% g(x)=b_0+b_1x+\cdots+b_nx^n,
+% \]
+% then
+% \[
+% f(x)g(x)=c_0+c_1x+\cdots+c_{m+n}x^{m+n},
+% \]
+% where each coefficient $c_k$ is found by adding all products $a_ib_j$ for which
+% the exponents satisfy $i+j=k$.  For example,
+% \[
+% c_0=a_0b_0,\qquad c_1=a_0b_1+a_1b_0,\qquad
+% c_{m+n}=a_mb_n.
+% \]
+% \end{lemma}
 
 \begin{definition}[Zero, one, and negatives]
 The zero element of $\Qx$ is the polynomial $0_{Qx} = 0$. Define the degree of $0_{Qx}$ to be $-\infty$.  
@@ -227,12 +228,20 @@ so $f(-g)=-(fg)$.  Hence
 \subsection{Divisibility}
 
 \begin{definition}[Divisibility]
-For $a(x),b(x)\in\Qx$, we say $a(x)$ divides $b(x)$, written
+For $f(x),g(x)\in\Qx$, we say $f(x)$ divides $g(x)$, written
 \[
-a(x)\mid b(x),
+f(x)\mid g(x),
 \]
 if there exists $q(x)\in\Qx$ such that
 \[
-b(x)=a(x)q(x).
+g(x)=f(x)q(x).
 \]
 \end{definition}
+
+\begin{definition}[Greatest Common Divisor]
+    For $f(x),g(x)\in\Qx$, we defince $\gcd(f(x),g(x)) = d(x)$ to satisfy:
+    \begin{itemize}
+        \item $d(x) \mid f(x)$ and $d(x) \mid g(x)$
+        \item $\forall h(x) \in \qx$ s.t. $h(x) \mid f(x)$ and $h(x) \mid g(x)$, $\|h(x)\| \leq \|d(x)\|$
+    \end{itemize}
+\end{definition} %%todo: existence and uniqueness
