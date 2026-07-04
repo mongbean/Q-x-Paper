@@ -18,10 +18,18 @@ Remember to follow the good writing guidelines! You can also break pages if you 
 \section{History}
 Historical background is often nice.
 
-\section{Axioms}
-You can make subsections if you find it appropriate.
+\begin{definition}
+     Define \textbf{summation}, or $\sum_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
+        \sum_{i=i_0}^{i_0} = a_{i_0} \qquad \sum_{i=i_0}^{n}a_i=a_n+\sum_{i=i_0}^{n-1}  a_i
+     \]
+\end{definition}
+\begin{definition}
+     Define \textbf{product}, or $\prod_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
+        \prod_{i=i_0}^{i_0} = a_{i_0} \qquad \prod_{i=i_0}^{n}a_i=a_n \cdot \prod_{i=i_0}^{n-1}  a_i
+     \]
+\end{definition}
 
-\subsection{Integers}
+\section{Integers}
 \begin{lemma}[NIBZO]
 There is no integer strictly between $0$ and $1$.  Equivalently, if
 $n\in\mathbb{Z}$ and
@@ -54,7 +62,7 @@ So $m^2\in S$, but $m^2<m$.  This contradicts the choice of $m$ as the least
 element of $S$.  Therefore $S$ is empty.
 \end{proof}
 
-\subsection{Rationals}
+\section{Rationals}
 \begin{lemma}[No zero divisors in $\mathbb{Q}$]
 If $a,b\in\mathbb{Q}$ and $ab=0$, then $a=0$ or $b=0$.
 \end{lemma}
@@ -77,7 +85,9 @@ a^{-1}\cdot0=a^{-1}(0+0)=a^{-1}\cdot0+a^{-1}\cdot0,
 and adding the additive inverse of $a^{-1}\cdot0$ to both sides gives
 $a^{-1}\cdot0=0$.  Hence $b=0$.  Therefore $a=0$ or $b=0$.
 \end{proof}
-\subsection{The Ring $\Qx$}
+
+\section{The Ring $\Qx$}
+
 \begin{definition}[The polynomial ring $\Qx$]
 We define a polynominal $f(x) \in \Qx$ with degree $n$ if it can be written as
 \[
@@ -86,8 +96,7 @@ f(x)=\sum_{0}^{n} a_i x^i
 where $n\in\mathbb{Z}_{\geq0}$ and each coefficient $a_i$ lies in $\mathbb{Q}$ and $a_n \neq 0$.
 \end{definition}
 
-\begin{theorem}[$\Qx$ is a commutative ring.]
-\end{theorem}
+\begin{theorem}[$\Qx$ is a commutative ring.]\end{theorem}
 
 \begin{proof} %%needs to be fixed is kinda wishy washy
 We check the ring conditions.  Addition stays inside $\Qx$ because each
@@ -125,6 +134,7 @@ with the following properties:
     \item For any $c(x) \in \qx ^ {\times}$, $\|c(x)\| = 1$.\\
 \textit{Proof.} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$. 
 \end{itemize}
+\end{definition}
 
 \begin{lemma}[Multiplication]
 
@@ -197,7 +207,7 @@ Since $h\neq0$ and $\Qx$ has no zero divisors, we must have
 $f-g=0$.  Thus $f=g$.
 \end{proof}
 
-\section{Basic Arithmetic Facts}
+\subsection{Basic Arithmetic}
 
 \begin{lemma}[Uniqueness of zero and one]
 The additive identity and multiplicative identity in $\Qx$ are unique.
@@ -294,7 +304,7 @@ so $f(-g)=-(fg)$.  Hence
 \]
 \end{proof}
 
-\section{Divisibility}
+\subsection{Divisibility}
 
 \begin{definition}[Divisibility]
 For $a(x),b(x)\in\Qx$, we say $a(x)$ divides $b(x)$, written
@@ -422,13 +432,13 @@ Therefore $q_1=q_2$.  Substituting back gives $r_1=r_2$.
 
 
 
-\end{definition}
-\section{Notation}
-\begin{definition}
-     Define \textbf{summation}, or $\sum_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
-        \sum_{i=i_0}^{i_0} = a_{i_0} \qquad \sum_{i=i_0}^{n}a_i=a_n+\sum_{i=i_0}^{n-1}  a_i
-     \]
-\end{definition}
+
+
+\section{Conclusion}
+Conclude with the big ideas!
+
+\section*{Appendix A: Summation and Product Lemmas}
+
 \begin{lemma} $\sum\limits _{i=i_0}^{n}  a_i + \sum\limits _{i=i_0}^{n}  b_i = \sum\limits _{i=i_0}^{n} (a_i+b_i)$\\
 Proof. \normalfont Note that \[\sum_{i=i_0}^{i_0}  a_i+ \sum_{i=i_0}^{i_0}  b_i = a_{i_0}+b_{i_0}=\sum_{i=i_0}^{i_0}  (a_i+b_i)\]
 Let $S=\left \{k \in \mathbb{Z}^+  \; \middle |  \;\sum\limits_{i=i_0}^{i_0+k}  a_i +  \sum\limits_{i=i_0}^{i_0+k}  b_i \neq  \sum\limits_{i=i_0}^{i_0+k} ( a_i +b_i)\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the Well-Ordering Principle, there exists a least element $l \in S$. \\
@@ -461,11 +471,7 @@ Let $S=\left \{k \in \mathbb{Z}^+  \;\middle| \;\sum\limits_{i=i_0}^{i_0+k}  ca_
 However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
 \end{lemma}
 
-\begin{definition}
-     Define \textbf{product}, or $\prod_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
-        \prod_{i=i_0}^{i_0} = a_{i_0} \qquad \prod_{i=i_0}^{n}a_i=a_n \cdot \prod_{i=i_0}^{n-1}  a_i
-     \]
-\end{definition}
+
 
 \begin{lemma} $\prod\limits _{i=i_0}^{n}  a_i  \prod\limits _{i=i_0}^{n}  b_i = \prod\limits _{i=i_0}^{n} a_ib_i$\\
 Proof. \normalfont Note that \[\prod_{i=i_0}^{i_0}  a_i \prod_{i=i_0}^{i_0}  b_i = a_{i_0}b_{i_0}=\prod_{i=i_0}^{i_0}  a_ib_i\]
@@ -481,5 +487,3 @@ a_l  b_l \cdot \prod\limits _{i=i_0}^{i_0+l-1}  a_i  \prod\limits _{i=i_0}^{i_0+
 \end{align*}
 However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
 \end{lemma}
-\section{Conclusion}
-Conclude with the big ideas!
