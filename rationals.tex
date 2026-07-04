@@ -61,11 +61,11 @@ By the one axiom,
 
 We prove for $x,y,z\in \bQ$, we have $x(y+z)=xy+xz$. Suppose $x=(a,b),y=(c,d),z=(e,f)$. Then $x(y+z)=(a,b)\cdot((c,d)+(e,f))=(a,b)\cdot(cf+de,df)=(a(cf+de),b(df))=(acf+ade,bdf)$. We also have $xy=(a,b)\cdot(c,d)=(ac,bd)$ and $xz=(a,b)\cdot(e,f)=(ae,bf)$. We then have $xy+xz=(ac,bd)+(ae,bf)=(acbf+bdae,bdbf)=(acf+dae,dbf)=(acf+ade,bdf)$. Hence $x(y+z)=xy+xz$. Right distributivity follows immediately, since $(y+z)x=x(y+z)=xy+xz=yx+zx$.
 
-\subsection{Equivalence}
+\noindent\textbf{Equivalence}
 \[
 (a,b)\sim(c,d) \longleftrightarrow ad=bc
 \]
-\subsection{Symmetry}
+\noindent\textbf{Symmetry}
 \[
 if (a,b)\sim(c,d)
 \]
@@ -81,7 +81,7 @@ so
 \[
 (c,d)\sim(a,b)
 \]
-\subsection{Transitivity}
+\noindent\textbf{Transitivity}
 \[
 (a,b)\sim(c,d),(c,d)\sim(e,f)
 \]
@@ -109,7 +109,7 @@ finally
 
 
 
-\subsection{Well-Defined}
+\noindent\textbf{Well-Defined}
 To show that addition is well defined, we show that $(a,b) + (c,d) = (a,b)+(e,f)$ if $(c,d) \sim (e,f)$. According to our criterion for an equivalence relation, $cf = de$. Therefore, we want to show $(ad+bc, bd) = (af+be, bf)$. To show these are equivalent, we want to show $abdf+b^2ed=abdf+b^2cf$. We cancel $abdf$ and $b^2$ because $b$ is nonzero to show that $de=cf$, which is true by our equivalence relation. \\
 
 To show that multiplication is well defined, we show that $(a,b) \cdot (c,d) = (a,b)\cdot(e,f)$ if $(c,d) \sim (e,f)$. According to our criterion for an equivalence relation, $cf = de$. Therefore, we want to show $(ac, bd) = (ae, bf)$. To show these are equivalent, we want to show $acbf=bdae$. Suppose $a=0$. Then $0=0$, which is true. Otherwise, suppose $a\neq0$. Then because $ab=ac\implies b=c$ when $a\neq0$, we can cancel $ab$ from both sides to get $cf=de$, which is true by the equivalence $(c,d)=(e,f)$. Hence multiplication is well defined.
@@ -117,7 +117,7 @@ To show that multiplication is well defined, we show that $(a,b) \cdot (c,d) = (
 
 
 
-\subsection{Multiplicative Inverse}
+\noindent\textbf{Multiplicative Inverse}
 For any $(a,b)$ and $(c,d)\in\mathbb{Q}$, and $a\neq0$, $\exists(bc,ad)$ where
 \[
 (a,b)(bc,ad)=(abc,abd)
