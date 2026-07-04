@@ -1,43 +1,3 @@
-%\section{Introduction}
-
-%\section{History}
-%Historical background is often nice.
-
-
-
-
-\section{Integers}
-\input{Integers.tex}
-
-%================================================================
-%summation, big pi, exponents, power rules
-%================================================================
-
-\begin{definition}
-     Define \textbf{summation}, or $\sum_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
-        \sum_{i=i_0}^{i_0} = a_{i_0} \qquad \sum_{i=i_0}^{n}a_i=a_n+\sum_{i=i_0}^{n-1}  a_i
-     \]
-\end{definition}
-\begin{definition}
-     Define \textbf{product}, or $\prod_{i=i_0}^n a_i$ for $n \in \mathbb{Z}^+$ and $n \geq i_0$ as follows: \[
-        \prod_{i=i_0}^{i_0} = a_{i_0} \qquad \prod_{i=i_0}^{n}a_i=a_n \cdot \prod_{i=i_0}^{n-1}  a_i
-     \]
-\end{definition}
-%%TODO: define exponents; power rules
-
-%================================================================
-%================================================================
-
-\section{Rationals}
-\input{Rationals.tex}
-
-\section{The Ring $\Qx$}
-\input{Polynomials.tex}
-
-\section{The Division Algorithm in $\Qx$}
-\input{Division.tex}
-
-\section{Euclid's Algorithm}
 %%%%%%%%%TODO: prove that c \in \q are the only units in \qx %%%%%%%%%
 \begin{definition}
     Define \textbf{Euclids Algorithm} on $f(x), g(x) \in \qx$ to produce $r,q \in \qx$ such that 
@@ -65,14 +25,3 @@ If $(g,l)$ does not reach 0, $(l, r_1)$ will also not reach 0, as they generate 
     \end{gather*}
 If $\gcd(g,l) = d$, $d \mid g$ and $d \mid l$. Since $b>l$, $\gcd(l, r_1)$ remains $d$. However, the Euclidean Algorithm on $(r_1, l)$ generates the same values as $(b, l)$. Thus, $r_1\in S$, but $r_l<l$ by the division algorithm, which is a contradiction. Thus, $S$ must be empty.
 \end{proof}
-
-
-
-
-\section{Conclusion}
-Conclude with the big ideas!
-
-\section*{Appendix A: Summation and Product Lemmas}
-
-\input{sumprod.tex}
-
