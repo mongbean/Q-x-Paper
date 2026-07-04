@@ -1,5 +1,6 @@
-\begin{lemma} $\sum\limits _{i=i_0}^{n}  a_i + \sum\limits _{i=i_0}^{n}  b_i = \sum\limits _{i=i_0}^{n} (a_i+b_i)$\\
-Proof. \normalfont Note that \[\sum_{i=i_0}^{i_0}  a_i+ \sum_{i=i_0}^{i_0}  b_i = a_{i_0}+b_{i_0}=\sum_{i=i_0}^{i_0}  (a_i+b_i)\]
+\begin{lemma} $\sum\limits _{i=i_0}^{n}  a_i + \sum\limits _{i=i_0}^{n}  b_i = \sum\limits _{i=i_0}^{n} (a_i+b_i)$ \end{lemma}
+\begin{proof}
+Note that \[\sum_{i=i_0}^{i_0}  a_i+ \sum_{i=i_0}^{i_0}  b_i = a_{i_0}+b_{i_0}=\sum_{i=i_0}^{i_0}  (a_i+b_i)\]
 Let $S=\left \{k \in \mathbb{Z}^+  \; \middle |  \;\sum\limits_{i=i_0}^{i_0+k}  a_i +  \sum\limits_{i=i_0}^{i_0+k}  b_i \neq  \sum\limits_{i=i_0}^{i_0+k} ( a_i +b_i)\right \}$. For the sake of contradiction, $S$ is not empty. As $S \subseteq \mathbb{Z}^+$, by the Well-Ordering Principle, there exists a least element $l \in S$. \\
 If $k=1$: \[
  \sum_{i=i_0}^{i_0+1}  a_i+ \sum_{i=i_0}^{i_0+1}  b_i = a_{i_0+1}+ a_{i_0}+b_{i_0+1}+b_{i_0}= (a_{i_0+1}+b_{i_0+1})+(a_{i_0}+b_{i_0}) =\sum_{i=i_0}^{i_0+1}  (a_i+b_i)
@@ -10,11 +11,11 @@ a_l + b_l+\sum\limits _{i=i_0}^{i_0+l-1}  a_i + \sum\limits _{i=i_0}^{i_0+l-1}  
 a_l + \sum\limits _{i=i_0}^{i_0+l-1}  a_i + b_l+\sum\limits _{i=i_0}^{i_0+l-1}  b_i &= (a_l + b_l)+\sum\limits _{i=i_0}^{i_0+l-1} (a_i+b_i)\\
 \sum\limits _{i=i_0}^{i_0+l}  a_i + \sum\limits _{i=i_0}^{i_0+l}  b_i &= \sum\limits _{i=i_0}^{i_0+l} (a_i+b_i)\\
 \end{align*}
-However, since $l \in S$, this is a contradiction. Thus, S must be empty. $\square$
-\end{lemma}
+However, since $l \in S$, this is a contradiction. Thus, S must be empty.\end{proof}
+
 \begin{lemma}
-$\sum\limits _{i=i_0}^{n} ca_i = c\sum\limits _{i=i_0}^{n} a_i$\end{lemma}
-\begin{proof} \normalfont Note that \[
+Sum Constants: $\sum\limits _{i=i_0}^{n} ca_i = c\sum\limits _{i=i_0}^{n} a_i$\end{lemma}
+\begin{proof} Note that \[
 \sum\limits _{i=i_0}^{i_0} ca_i = ca_{i_0}=c\sum\limits _{i=i_0}^{i_0} a_i
 \] 
 and that 
@@ -29,7 +30,11 @@ Let $S=\left \{k \in \mathbb{Z}^+  \;\middle| \;\sum\limits_{i=i_0}^{i_0+k}  ca_
 \end{align*}
 However, since $l \in S$, this is a contradiction. Thus, S must be empty.\end{proof}
 
-
+\begin{lemma} Multiplied Sums: $\sum\limits _{i=i_0}^{n}  a_i \cdot \sum\limits _{j=j_0}^{m}  b_j = \sum\limits _{i=i_0}^{n} \sum\limits _{j=j_0}^{m} (a_ib_j)$ \end{lemma}
+\begin{proof} By Sum Constants, we know that 
+\begin{align*} \sum\limits _{i=i_0}^{n}  a_i \cdot \sum\limits _{j=j_0}^{m}  b_j &= \sum\limits _{i=i_0}^{n} (a_i \cdot \sum\limits _{j=j_0}^{m}  b_j) \\
+ \sum\limits _{i=i_0}^{n}  a_i \cdot \sum\limits _{j=j_0}^{m}  b_j &= \sum\limits _{i=i_0}^{n} (\sum\limits _{j=j_0}^{m}  a_i b_j) 
+\end{align*} \end{proof}
 
 
 \begin{lemma} $\prod\limits _{i=i_0}^{n}  a_i  \prod\limits _{i=i_0}^{n}  b_i = \prod\limits _{i=i_0}^{n} a_ib_i$\end{lemma}

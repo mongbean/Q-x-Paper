@@ -1,20 +1,6 @@
 \section{Introduction}
 
 
-
-
-\begin{theorem}\label{theorem 1}
-        Theorems are massive results.
-\end{theorem}
-
-You can also hyperlink to Theorem \ref{theorem 1} if you want!
-
-\begin{corollary}
-    Corollaries follow from theorems.
-\end{corollary}
-
-Remember to follow the good writing guidelines! You can also break pages if you feel it appropriate. \newpage
-
 \section{History}
 Historical background is often nice.
 
@@ -61,6 +47,7 @@ Thus $m^2$ is also an integer satisfying
 So $m^2\in S$, but $m^2<m$.  This contradicts the choice of $m$ as the least
 element of $S$.  Therefore $S$ is empty.
 \end{proof}
+%%todo: power rules
 
 \section{Rationals}
 \input{rationals.tex}
@@ -110,7 +97,14 @@ with the following properties:
 \begin{itemize}
     \item $\| f(x)\| \cdot\| g(x)\| = \| f(x)g(x)\|$ 
     \begin{proof}
-        % todo: proof
+        By Multiplied Sums, if $f(x)=\sum_{i=0}^{n} a_i x^i$ and $g(x)=\sum_{j=0}^{m} b_j x^j$, with $n$ and $m$ the degrees of $f$ and $g$ respectively, then 
+        \begin{align*}
+        f(x)g(x)&=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^i x^j=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}
+        \end{align*}
+        Notice that to find the degree of $f(x)g(x)$, we take the maximum value of $i+j$ which is their respective maximums, $n+m$, so:
+        \[
+        \|f(x)g(x)\|=2^{n+m}=2^n2^m = \|f(x)g(x)\|
+        \]
     \end{proof}
     \item For any $c(x) \in \qx ^ {\times}$, $\|c(x)\| = 1$.
 \begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
