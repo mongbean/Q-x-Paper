@@ -34,3 +34,13 @@ Thus $m^2$ is also an integer satisfying
 So $m^2\in S$, but $m^2<m$.  This contradicts the choice of $m$ as the least
 element of $S$.  Therefore $S$ is empty.
 \end{proof}
+
+\begin{definition}
+    Define the \textbf{exponent} $\forall a \in \bZ, b \in \bZ \cup \{0\}$ as \[
+    a^b = \begin{cases}
+        1 & \text{if } b=0\\
+        a \cdot a^{b-1} & \text{otherwise}
+    \end{cases}
+    \]
+\end{definition}
+For properties of exponents, see Appendix B.
