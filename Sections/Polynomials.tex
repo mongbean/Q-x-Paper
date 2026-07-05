@@ -1,3 +1,4 @@
+Now we can formally define our rational polynominals.
 \subsection{Construction}
 \begin{definition}[The polynomial ring $\Qx$]
 We define a polynomial $f(x) \in \Qx$ with degree $n$ if it can be written as
@@ -18,7 +19,7 @@ $a_i+b_i$ is rational. Hence $f(x)+g(x)\in\Qx$.
 \end{definition}
 
 \subsection{Ring Axioms}
-
+The rational polynominals also follow the ring axioms.
 \noindent\textbf{Commutativity of Addition: } 
 Addition is commutative because each coefficient is added in
 $\mathbb{Q}$, and addition in $\mathbb{Q}$ is commutative.
@@ -107,8 +108,7 @@ $1_{\Qx}f(x)$, the coefficient of $x^i$ is $1\cdot a_i=a_i$. Hence
 % \]
 % is in $\Qx$.
 \subsection{Units}
-
-
+Just like integer rings, the polynominals have units as well that follow the same definition.
 \begin{definition}
     Define $u(x) \in \qx$ as a \textbf{unit} if there exists $v(x) \in \qx$ s.t. $u(x)v(x) = 1$. The set of units in $\qx$ is denoted $\qx^{\times}$.
 \end{definition}
@@ -123,8 +123,10 @@ $1_{\Qx}f(x)$, the coefficient of $x^i$ is $1\cdot a_i=a_i$. Hence
         \end{align*}
         by Multiplied Sums. Notice that $i+j = m+n$ only once. However, $a_mb_n$ are both nonzero, so $a_mb_n \neq 0$. Thus, we have a nonzero term $a_mb_nx^{m+n} \neq 1$.  
 \end{proof}
+Notice that because units in $\qx$ are constants, this makes every polynominal have an equivalent one that is monic.
 
 \subsection{The Norm}
+We need a method to define size of a polynominal. The natural choice is its degree; however, this is not multiplicative, and norms are more helpful when they are multiplicative.
 \begin{definition}
     For $f(x) \in \Qx / \{0\}$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
     \| f(x) \|  = 2^{\deg{f(x)}}
@@ -149,6 +151,7 @@ with the following properties:
 \end{itemize}
 \end{definition}
 
+We want units (and only units) to preserve norm.
 \begin{lemma}
     $\|f(x)g(x)\| = \|f(x)\| \Leftrightarrow g(x) \in \qx^{\times}$ 
 \end{lemma}
@@ -165,6 +168,7 @@ with the following properties:
     \end{itemize}
 \end{proof}
 
+In addition, $\qx$ is an integral domain.
 \begin{theorem}[$\Qx$ has no zero divisors]
 If $f(x),g(x)\in\Qx$ and
 \[
@@ -172,7 +176,6 @@ f(x)g(x)=0,
 \]
 then $f(x)=0$ or $g(x)=0$.
 \end{theorem}
-
 \begin{proof}
 Suppose, for contradiction, that
 \[
@@ -180,14 +183,11 @@ f(x)g(x)=0
 \]
 with $f(x)\neq0$ and $g(x)\neq0$.
 
-Since $g(x)\neq0$, by the norm lemma,
+Since $g(x)\neq0$, by the norm lemma, %%todo: where is this lemma
 \[
 \|f(x)\|\leq \|f(x)g(x)\|.
 \]
-Since $f(x)\neq0$, we have
-\[
-\|f(x)\|=2^{\deg(f(x))}>0.
-\]
+Since $f(x)\neq0$, $\|f(x)\|$ is positive.
 So $\|f(x)g(x)\|$ is positive. In particular, $f(x)g(x)\neq0$, since the norm
 is only positive for nonzero polynomials.
 
@@ -195,14 +195,13 @@ This contradicts $f(x)g(x)=0$. Therefore at least one of $f(x)$ and $g(x)$
 must be zero.
 \end{proof}
 
-\begin{corollary}[Cancellation] %%todo: does this really go here
+\begin{corollary}[Cancellation]
 If $h(x)\neq0$ and
 \[
 h(x)f(x)=h(x)g(x),
 \]
 then $f(x)=g(x)$.
 \end{corollary}
-
 \begin{proof}
 Subtract the right side from the left:
 \[
@@ -213,7 +212,7 @@ $f-g=0$.  Thus $f=g$.
 \end{proof}
 
 \subsection{Basic Arithmetic}
-
+Almost all the integer properties have analogous properties in $\qx$.
 \begin{lemma}[Uniqueness of zero and one]
 The additive identity and multiplicative identity in $\Qx$ are unique.
 In particular, if $f(x)+z(x)=f(x)$ for every $f(x)\in\Qx$, then
@@ -346,7 +345,7 @@ So
 
 
 \subsection{Divisibility}
-
+Only with divisibility can we define fundamental lemmas and primes.
 \begin{definition}[Divisibility]
 For $f(x),g(x)\in\Qx$, we say $f(x)$ divides $g(x)$, written
 \[
@@ -357,7 +356,7 @@ if there exists $q(x)\in\Qx$ such that
 g(x)=f(x)q(x).
 \]
 \end{definition}
-
+The greatest common divsor is also helpful in many theorems.
 \begin{definition}[Greatest Common Divisor]
     For $f(x),g(x)\in\Qx$, we defince $\gcd(f(x),g(x)) = d(x)$ to satisfy:
     \begin{itemize}

@@ -1,7 +1,7 @@
 %================================================================
 %CONTENTS: Construction of Q from Z, Ring Axioms, Equivalence, Well Definedness, Mult Inverse/Division
 %================================================================
-
+In order to construct rational polynominals, we first must formally define rationals.
 \subsection{Construction}
 
 Define $\bQ \subseteq \mathbb{Z}\times \mathbb{Z}$, where the elements of $\mathbb{Q}$ are of the form $(a,b)$ where $a,b\in\mathbb{Z}, b\neq 0$. Define two operations $+,\cdot$, such that 
@@ -14,7 +14,7 @@ Define $\bQ \subseteq \mathbb{Z}\times \mathbb{Z}$, where the elements of $\math
 Also, define an equivalence relation on $\mathbb{Q}$. Two elements $(a,b),(c,d)$ in $\mathbb{Q}$ are equal iff $ad=bc$. Denote equivalence as $(a,b)\sim(c,d)$.
 
 We can also denote $(a,b)$ as $\frac{a}{b}$.
-
+The rationals are a Ring as defined by the ring axioms.
 \subsection{Ring Axioms}
 \textbf{Commutativity of Multiplication: } \[(a,b) \cdot (c,d) = (ac,bd) \qquad \text{and} \qquad (c,d) \cdot (a,b) = (ca, db) = (ac,bd)\]
 
@@ -66,52 +66,21 @@ By the one axiom,
 We prove for $x,y,z\in \bQ$, we have $x(y+z)=xy+xz$. Suppose $x=(a,b),y=(c,d),z=(e,f)$. Then $x(y+z)=(a,b)\cdot((c,d)+(e,f))=(a,b)\cdot(cf+de,df)=(a(cf+de),b(df))=(acf+ade,bdf)$. We also have $xy=(a,b)\cdot(c,d)=(ac,bd)$ and $xz=(a,b)\cdot(e,f)=(ae,bf)$. We then have $xy+xz=(ac,bd)+(ae,bf)=(acbf+bdae,bdbf)=(acf+dae,dbf)=(acf+ade,bdf)$. Hence $x(y+z)=xy+xz$. Right distributivity follows immediately, since $(y+z)x=x(y+z)=xy+xz=yx+zx$.
 
 \subsection{Equivalence}
+Two rationals are equal if and only if they can be simplified to each other. In other words, 
 \[
 (a,b)\sim(c,d) \longleftrightarrow ad=bc
 \]
-\noindent\textbf{Symmetry}
-\[
-if (a,b)\sim(c,d)
-\]
-then
-\[
-ad=bc
-\]
-and
-\[
-cb=da
-\]
-so
+\noindent\textbf{Symmetry: } If $(a,b)\sim(c,d)$, then $(c,d)\sim(a,b)$
+\begin{proof}
+    $ad=bc$. This can be written as $cb=da$, so 
 \[
 (c,d)\sim(a,b)
 \]
-\noindent\textbf{Transitivity}
-\[
-(a,b)\sim(c,d),(c,d)\sim(e,f)
-\]
-then
-\[
-ad=bc, cf=de
-\]
-and
-\[
-adcf=bcde
-\]
-and
-\[
-cdaf=cdbe
-\]
-so
-\[
-af=be
-\]
-finally
-\[
-(a,b)\sim(e,f)
-\]
-
-
-
+\end{proof}
+\noindent\textbf{Transitivity: } If $(a,b)\sim(c,d),(c,d)\sim(e,f)$ then $(a,b)\sim(e,f)$.
+\begin{proof}
+    Since $ad=bc, cf=de$, $adcf=bcde$ and $cdaf=cdbe$. Thus, $af=be$ so $(a,b)\sim(e,f)$
+\end{proof}
 
 \subsection{Well-Defined}
 To show that addition is well defined, we show that $(a,b) + (c,d) = (a,b)+(e,f)$ if $(c,d) \sim (e,f)$. According to our criterion for an equivalence relation, $cf = de$. Therefore, we want to show $(ad+bc, bd) = (af+be, bf)$. To show these are equivalent, we want to show $abdf+b^2ed=abdf+b^2cf$. We cancel $abdf$ and $b^2$ because $b$ is nonzero to show that $de=cf$, which is true by our equivalence relation. \\
@@ -122,6 +91,7 @@ To show that multiplication is well defined, we show that $(a,b) \cdot (c,d) = (
 
 
 \subsection{Multiplicative Inverse}
+%% whats the theorem
 For any $(a,b)$ and $(c,d)\in\mathbb{Q}$, and $a\neq0$, $\exists(bc,ad)$ where
 \[
 (a,b)(bc,ad)=(abc,abd)

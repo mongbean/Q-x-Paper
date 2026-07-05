@@ -1,3 +1,21 @@
+To deal with powers of primes in prime facorizations, we need one more lemma that proves powers of primes do not divide each other.
+\begin{lemma}
+    $ \gcd(p^k, q^j) = 1$ for all $p, q \in \qx$ such that $\gcd(p, q) = 1$.
+\end{lemma}
+\begin{proof}
+    First, note that if $k=0$ or $j=0$, $\gcd(f(x), 1) = 1 \forall f(x)\in \qx$.
+    Next, prove that $\gcd(p, q^j) = 1$. Let $S=\left\{i \in \pZ\mid \gcd(p, q^i) \neq 1 \right\}$ For the sake of contradiction, let S be nonempty. By the well-ordering principle, there exists a least element $l \in S$.
+    Note that if $i=1$,  $\gcd(p, q^1) = \gcd(p, q) = 1$. Thus, $1 \notin S$ and $l>1$, and $l-1 \notin S$.
+    \begin{align*}
+        \gcd(p, q^{l-1}) &= 1 \\
+        \gcd(p, q) &= 1
+        \gcd(p, q^l) &= 1
+    \end{align*}
+    Thus, this is a contradiction and $S$ is empty. An analogous argument can be made since  $\gcd(p, q^j) = 1$ proving that $ \gcd(p^k, q^j) = 1$.
+\end{proof}
+
+
+Finally, we can prove the uniqueness of prime factorizations. For a prime and its power to not exist in another facorization, either that facoritzation doesnt include that prime or it includes it but with a different power. Here, we prove (using the Fundamental Lemma) that both cases are impossible.
 \begin{lemma}
     If $f(x) \in \qx$ can be expressed as $u(x)\prod _{i=1}^n p_i(x)^{\alpha_i}$ where $p_i(x) \in \qx$ is prime and unique, $u(x) \in \qx^{\times}$,
     $\alpha_i \in \bZ^+$, then only the set $S= \{(p_i, \alpha_i)\}$ has this property. 
@@ -30,18 +48,5 @@ Thus, $q_k^{\beta_k-\alpha_j} \mid \prod _{i=1}^{j-1}p_i(x)^{\alpha_i}$ or $q_k^
 \textbf{Case 2.2: }$\beta_k <\alpha_j$ can be proven using an analogous argument. 
 \end{proof}
 
-\begin{lemma}
-    $ \gcd(p^k, q^j) = 1$ for all $p, q \in \qx$ such that $\gcd(p, q) = 1$.
-\end{lemma}
-\begin{proof}
-    First, note that if $k=0$ or $j=0$, $\gcd(f(x), 1) = 1 \forall f(x)\in \qx$.
-    Next, prove that $\gcd(p, q^j) = 1$. Let $S=\left\{i \in \pZ\mid \gcd(p, q^i) \neq 1 \right\}$ For the sake of contradiction, let S be nonempty. By the well-ordering principle, there exists a least element $l \in S$.
-    Note that if $i=1$,  $\gcd(p, q^1) = \gcd(p, q) = 1$. Thus, $1 \notin S$ and $l>1$, and $l-1 \notin S$.
-    \begin{align*}
-        \gcd(p, q^{l-1}) &= 1 \\
-        \gcd(p, q) &= 1
-        \gcd(p, q^l) &= 1
-    \end{align*}
-    Thus, this is a contradiction and $S$ is empty. An analogous argument can be made since  $\gcd(p, q^j) = 1$ proving that $ \gcd(p^k, q^j) = 1$.
-\end{proof}
+
 

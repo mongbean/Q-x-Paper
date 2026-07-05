@@ -1,11 +1,12 @@
+The irreducibility of primes can be used by the following lemma.
 \begin{lemma}[Euclid's Lemma in $\Qx$]
-Let $p(x),f(x),g(x)\in\Qx$, and suppose $p(x)$ is irreducible. If $p(x)\mid f(x)g(x)$, then $p(x)\mid f(x)$ or $p(x)\mid g(x)$.
+Let $p(x),f(x),g(x)\in\Qx$, and suppose $p(x)$ is prime. If $p(x)\mid f(x)g(x)$, then $p(x)\mid f(x)$ or $p(x)\mid g(x)$.
 \end{lemma}
 
 \begin{proof}
 Suppose $p(x)\mid f(x)g(x)$. If $p(x)\mid f(x)$, then we are done. So assume $p(x)\nmid f(x)$.
 
-Let $d(x)=\gcd(p(x),f(x))$. Since $d(x)\mid p(x)$ and $p(x)$ is irreducible, $d(x)$ is either a unit or an associate of $p(x)$.
+Let $d(x)=\gcd(p(x),f(x))$. Since $d(x)\mid p(x)$ and $p(x)$ is prime, $d(x)$ is either a unit or an associate of $p(x)$.
 
 If $d(x)$ were an associate of $p(x)$, then $p(x)\mid d(x)$. Since $d(x)\mid f(x)$, this would imply $p(x)\mid f(x)$, contradicting our assumption. Therefore $d(x)$ is a unit.
 
@@ -21,10 +22,10 @@ Now $p(x)$ divides $a(x)p(x)g(x)$ because that term has a factor of $p(x)$. Also
 
 Thus $p(x)\mid f(x)$ or $p(x)\mid g(x)$.
 \end{proof}
-
-\begin{lemma}
+This helpful corollary extends this to the greatest common divisor and allows us to multiply them. If a number is relatively prime to two numbers, it must be relatively prime to their product.
+\begin{corollary}
     If $f(x), g(x), h(x) \in \qx$, and $\gcd(f, g) = 1$ as well as $\gcd(f, h) = 1$ then $\gcd(f, gh) = 1$.
-\end{lemma}
+\end{corollary}
 \begin{proof}
     Assume for the sake of contradiction that there exists $a(x) \in \qx$, $\|a(x)\| > 1$ such that $\gcd(f, gh) = a$. Thus, $a \mid f$ and $a \mid gh$. We know that $a(x)$ must have a prime factor. Define it as $p(x)$. Now, we know that \[
     p(x) \mid f(x) \qquad p(x) \mid g(x)h(x)
@@ -32,7 +33,7 @@ Thus $p(x)\mid f(x)$ or $p(x)\mid g(x)$.
     By the Fundamental Lemma, $p(x) \mid g(x)$ or $p(x) \mid h(x)$. Without loss of generality, let $p(x) \mid g(x)$. Thus, since $p(x) \mid f(x)$, $\gcd(f(x), g(x)) \geq \|p(x)\| > 1$. However, this is a contradiction. Thus, $\gcd(f, gh) = 1$
 \end{proof}
 
-
+Now, we can extend these lemmas to a more general case that proves if a number divides a product, not all numbers in the product can be relatively prime to that number.
 \begin{theorem}
     Let $f(x),g_i(x)\in\Qx$, and let $f(x) \mid \prod_{i=1}^n g_i(x)$. Then, there exists $k 
     \leq n$ such that $\gcd(f(x), g_k(x)) \neq 1$. 
