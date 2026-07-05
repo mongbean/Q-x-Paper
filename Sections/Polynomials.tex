@@ -1,4 +1,4 @@
-Now we can formally define our rational polynominals.
+Now we can formally define our rational polynomial.
 \subsection{Construction}
 \begin{definition}[The polynomial ring $\Qx$]
 We define a polynomial $f(x) \in \Qx$ with degree $n$ if it can be written as
@@ -19,7 +19,7 @@ $a_i+b_i$ is rational. Hence $f(x)+g(x)\in\Qx$.
 \end{definition}
 
 \subsection{Ring Axioms}
-The rational polynominals also follow the ring axioms.
+The rational polynomials also follow the ring axioms.
 
 \noindent\textbf{Commutativity of Addition: } 
 Addition is commutative because each coefficient is added in
@@ -112,7 +112,7 @@ $1_{\Qx}f(x)$, the coefficient of $x^i$ is $1\cdot a_i=a_i$. Hence
 % \]
 % is in $\Qx$.
 \subsection{Units}
-Just like integer rings, the polynominals have units as well that follow the same definition.
+Just like integer rings, the polynomials have units as well that follow the same definition.
 \begin{definition}
     Define $u(x) \in \qx$ as a \textbf{unit} if there exists $v(x) \in \qx$ s.t. $u(x)v(x) = 1$. The set of units in $\qx$ is denoted $\qx^{\times}$.
 \end{definition}
@@ -127,10 +127,10 @@ Just like integer rings, the polynominals have units as well that follow the sam
         \end{align*}
         by Multiplied Sums. Notice that $i+j = m+n$ only once. However, $a_mb_n$ are both nonzero, so $a_mb_n \neq 0$. Thus, we have a nonzero term $a_mb_nx^{m+n} \neq 1$.  
 \end{proof}
-Notice that because units in $\qx$ are constants, this makes every polynominal have an equivalent one that is monic.
+Notice that because units in $\qx$ are constants, this makes every polynomial have an equivalent one that is monic.
 
 \subsection{The Norm}
-We need a method to define size of a polynominal. The natural choice is its degree; however, this is not multiplicative, and norms are more helpful when they are multiplicative.
+We need a method to define size of a polynomial. The natural choice is its degree; however, this is not multiplicative, and norms are more helpful when they are multiplicative.
 \begin{definition}
     For $f(x) \in \Qx / \{0\}$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
     \| f(x) \|  = 2^{\deg{f(x)}}
