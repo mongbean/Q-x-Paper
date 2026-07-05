@@ -34,12 +34,12 @@ Therefore, if $\exists k(x)\mid m(x)$, $\|k(x)\|=\|m(x)\|$ or it is a unit. For 
 \subsection{Prime Factorisation}
 
 \begin{theorem}[Existence of a Prime Factorisation]
-    $\forall n(x)\in\Qx, \exists S\subset\Qx$ where $\forall a(x)\in S$, $a(x)$ is prime, such that $n(x)=\prod_{a(x)\in S}a(x)$.
+    $\forall n(x)\in\Qx, \exists S\subset\Qx$ where $\forall a(x)\in S$, $a(x)$ is prime, and $u(x)$ which is a unit, such that $n(x)=u(x)\prod_{a(x)\in S}a(x)$.
 \end{theorem}
 
 $\forall n(x)\in\bZ^+,\exists m_1(x)\mid n(x)$ and $m_1(x)$ is prime. If $m_1(x)=n(x)$, then such $S$ exists where $S=\{m_1\}$. Otherwise, $\exists n_1(x)$ where $m_1(x)n_1(x)=n(x)$. It follows then that $\|m_1(x)\|\|n_1(x)\|=\|n(x)\|$, so $\|n_1(x)\|\mid\|n(x)\|$. Since they are both positive integers, this means that $\|n_1(x)\|\leq\|n(x)\|$. However, if $\|n_1(x)\|=\|n(x)\|$, then $\|m_1(x)\|=1$, meaning it is a unit and therefore can't be prime. Therefore, $\|n_1(x)\|<\|n(x)\|$.\\
 
-Similarly, either $n_1(x)$ is prime or $m_2(x)n_2(x)=n_1(x)$, where $m_2(x)$ is prime. If this terminates at $n_k(x)$ which is prime, we have $n(x)=n_k(x)\prod_{i=1}^{k}m_i(x)$, and all terms on the right hand side are prime. Then, we can have $S=\{n_k(x)\}\cup\{m_i\mid i\in\bZ \land 0<i\leq k\}$.\\
+Similarly, either $n_1(x)$ is prime or $m_2(x)n_2(x)=n_1(x)$, where $m_2(x)$ is prime. If this terminates at $n_k(x)$ which is a unit, we have $n(x)=n_k(x)\prod_{i=1}^{k}m_i(x)$. Then, we can have $S=\{m_i\mid i\in\bZ \land 0<i\leq k\}$.\\
 
 Suppose this doesn't terminate. Then, we have set $\|N\|=\{\|n_i(x)\||i\in\bZ^+\}$ which is infinite, and $\forall k\in\bZ^+, \|n_k(x)\|>\|n_{k+1}(x)\|$. Also, $\|N\|\subset\bZ^+$ since the norm of all non-zero polynomials is a positive integer. Since it is non-empty, there must be a minimal element $\|n_m(x)\|$ in it. However, $\|n_m(x)\|>\|n_{m+1}(x)\|$, so it isn't minimal $\xrightarrow{}\xleftarrow{}$.\\
  
