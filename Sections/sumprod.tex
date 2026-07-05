@@ -54,16 +54,7 @@ However, since $l \in S$, this is a contradiction. Thus, S must be empty. \end{p
 
 \begin{lemma} $\prod\limits _{i=i_0}^{n}  a_i = \prod\limits _{i=i_0}^{k-1} a_i \m a_k \m\prod\limits _{i=k+1}^{n} a_i$\end{lemma}
 \begin{proof}
-Let
-\[
-S=\left\{t\in\mathbb{Z}^+ \;\middle|\;
-\prod\limits_{i=i_0}^{k+t} a_i
-\neq
-\prod\limits_{i=i_0}^{k-1} a_i \m a_k \m
-\prod\limits_{i=k+1}^{k+t} a_i
-\right\}.
-\]
-We show $S$ is empty. First, $1\notin S$, since by the recursive definition of product,
+Let $S=\left\{t\in\mathbb{Z}^+ \;\middle|\; \prod\limits_{i=i_0}^{k+t} a_i \neq \prod\limits_{i=i_0}^{k-1} a_i \m a_k \m \prod\limits_{i=k+1}^{k+t} a_i\right\}$. We show $S$ is empty. First, $1\notin S$, since by the recursive definition of product,
 \[
 \prod\limits_{i=i_0}^{k+1}a_i
 =
@@ -74,17 +65,7 @@ a_{k+1}\m a_k\m\prod\limits_{i=i_0}^{k-1}a_i
 \prod\limits_{i=i_0}^{k-1}a_i\m a_k\m
 \prod\limits_{i=k+1}^{k+1}a_i.
 \]
-For the sake of contradiction, suppose $S$ is not empty. Since
-$S\subseteq\mathbb{Z}^+$, by WOP there is a least element $l\in S$. Since
-$1\notin S$, $l>1$, so $l-1\in\mathbb{Z}^+$. Since $l$ is least in $S$,
-$l-1\notin S$. Thus
-\[
-\prod\limits_{i=i_0}^{k+l-1} a_i
-=
-\prod\limits_{i=i_0}^{k-1} a_i \m a_k \m
-\prod\limits_{i=k+1}^{k+l-1} a_i.
-\]
-Then, using the recursive definition again,
+For the sake of contradiction, suppose $S$ is not empty. Since $S\subseteq\mathbb{Z}^+$, by WOP there is a least element $l\in S$. Since $1\notin S$, $l>1$, so $l-1\in\mathbb{Z}^+$. Since $l$ is least in $S$, $l-1\notin S$. Thus $\prod\limits_{i=i_0}^{k+l-1} a_i = \prod\limits_{i=i_0}^{k-1} a_i \m a_k \m \prod\limits_{i=k+1}^{k+l-1} a_i$. Then, using the recursive definition again,
 \begin{align*}
 \prod\limits_{i=i_0}^{k+l} a_i
 &=a_{k+l}\m\prod\limits_{i=i_0}^{k+l-1}a_i\\
@@ -94,7 +75,5 @@ Then, using the recursive definition again,
 &=\prod\limits_{i=i_0}^{k-1} a_i \m a_k \m
 \prod\limits_{i=k+1}^{k+l}a_i.
 \end{align*}
-So $l\notin S$, a contradiction. Therefore $S$ is empty. Since $n>k$, write
-$n=k+t$ for some $t\in\mathbb{Z}^+$. Since $S$ is empty, the equality holds for
-$n$.
+So $l\notin S$, a contradiction. Therefore $S$ is empty. Since $n>k$, write $n=k+t$ for some $t\in\mathbb{Z}^+$. Since $S$ is empty, the equality holds for $n$.
 \end{proof}
