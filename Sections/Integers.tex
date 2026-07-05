@@ -1,6 +1,80 @@
 %TODO: Ring, Order axioms and WOP; basic arithmetic and lemmas
 %todo: ab \geq a for a, b in z+, and ab = a iff b is unit
 
+\begin{definition}
+Let $\bZ^+$ be the set of positive integers. We assume:
+\begin{itemize}
+    \item If $a,b\in\bZ^+$, then $a+b\in\bZ^+$.
+    \item If $a,b\in\bZ^+$, then $ab\in\bZ^+$.
+    \item $0\notin\bZ^+$.
+    \item For every $a\in\bZ$, exactly one of $a\in\bZ^+$, $a=0$, or $-a\in\bZ^+$ is true.
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+For $a,b\in\bZ$, define $a<b$ if $b-a\in\bZ^+$. Define $a>b$ if $b<a$. Define $a\leq b$ if $a<b$ or $a=b$, and define $a\geq b$ if $a>b$ or $a=b$.
+\end{definition}
+
+\begin{axiom}[Well-Ordering Principle]
+Every nonempty subset of $\bZ^+$ has a least element.
+\end{axiom}
+
+\begin{lemma}
+For $a,b,c\in\bZ$, if $a\leq b$ and $b\leq c$, then $a\leq c$.
+\end{lemma}
+
+\begin{proof}
+If one of the inequalities is equality, the result follows directly. Now suppose $a<b$ and $b<c$. Then $b-a\in\bZ^+$ and $c-b\in\bZ^+$. By additive closure of $\bZ^+$,
+\[
+(b-a)+(c-b)\in\bZ^+.
+\]
+But $(b-a)+(c-b)=c-a$, so $c-a\in\bZ^+$. Thus $a<c$, and therefore $a\leq c$.
+\end{proof}
+
+\begin{lemma}[NIBZO]
+There is no integer strictly between $0$ and $1$.
+\end{lemma}
+
+\begin{proof}
+Suppose, for contradiction, that there exists $n\in\bZ$ such that $0<n<1$. Let
+\[
+S=\{n\in\bZ:0<n<1\}.
+\]
+Then $S$ is nonempty and $S\subseteq\bZ^+$. By WOP, $S$ has a least element. Call it $m$. Since $0<m$ and $m<1$, multiplying $m<1$ by the positive integer $m$ gives $m^2<m$. Also $m^2\in\bZ^+$ by multiplicative closure. Hence
+\[
+0<m^2<m<1.
+\]
+So $m^2\in S$, but $m^2<m$, contradicting the minimality of $m$. Therefore no such integer exists.
+\end{proof}
+
+\begin{lemma}
+If $a\in\bZ^+$, then $1\leq a$.
+\end{lemma}
+
+\begin{proof}
+Since $a\in\bZ^+$, we have $0<a$. If $a<1$, then $0<a<1$, contradicting NIBZO. Thus either $a=1$ or $1<a$, so $1\leq a$.
+\end{proof}
+
+\begin{lemma}
+If $a,b\in\bZ^+$, then $ab\geq a$.
+\end{lemma}
+
+\begin{proof}
+Since $b\in\bZ^+$, we have $1\leq b$. If $b=1$, then $ab=a$. If $1<b$, then $b-1\in\bZ^+$. Since $a\in\bZ^+$, multiplicative closure gives $a(b-1)\in\bZ^+$. But $a(b-1)=ab-a$, so $ab-a\in\bZ^+$, which means $a<ab$. Hence $a\leq ab$.
+\end{proof}
+
+\begin{lemma}
+If $a,b\in\bZ^+$, then $ab=a$ if and only if $b=1$.
+\end{lemma}
+
+\begin{proof}
+If $b=1$, then $ab=a$. Conversely, suppose $ab=a$. If $b\neq1$, then since $b\in\bZ^+$, the previous lemma gives $1<b$, so $b-1\in\bZ^+$. Since $a\in\bZ^+$, we get $a(b-1)\in\bZ^+$. But
+\[
+a(b-1)=ab-a=a-a=0,
+\]
+so $0\in\bZ^+$, contradicting the order axiom. Therefore $b=1$.
+\end{proof}
+
 \begin{lemma}[NIBZO]
 There is no integer strictly between $0$ and $1$.  Equivalently, if
 $n\in\mathbb{Z}$ and
