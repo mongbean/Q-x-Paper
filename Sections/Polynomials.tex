@@ -43,10 +43,26 @@ polynomial $1$ has constant coefficient $1$.  Since $0\neq1$ in $\mathbb{Q}$,
 have $0_{\Qx}\neq1_{\Qx}$.
 \end{proof}
 
+\begin{definition}
+    Define $u(x) \in \qx$ as a \textbf{unit} if there exists $v(x) \in \qx$ s.t. $u(x)v(x) = 1$. The set of units in $\qx$ is denoted $\qx^{\times}$.
+\end{definition}
+\begin{lemma}
+    $u(x) \in \qx^{\times} \; \Leftrightarrow \; u(x) \in \bQ$
+\end{lemma}
+\begin{proof}
+    First, prove $u(x) \in \bQ \; \Rightarrow  \; u(x) \in \qx^{\times}$. This is a collorary of the Multiplicative Inverse property of $\bQ$. 
+    Second, prove $u(x) \in \qx^{\times} \; \Rightarrow \; u(x) \in \bQ$. Define $u(x)=\sum_{i=0}^{n} a_i x^i$ and $v(x)=\sum_{j=0}^{m} b_j x^j$, with $n$ and $m$ the degrees of $u$ and $v$ respectively, then 
+        \begin{align*}
+        u(x)v(x)&=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^i x^j=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}
+        \end{align*}
+        by Multiplied Sums. Notice that $i+j = m+n$ only once. However, $a_mb_n$ are both nonzero, so $a_mb_n \neq 0$. Thus, we have a nonzero term $a_mb_nx^{m+n} \neq 1$.  
+\end{proof}
+
 \begin{definition} %TODO: define units, then multiplication by a unit preserves norm, and that it is unique to units
-    For $f(x) \in \Qx$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
+    For $f(x) \in \Qx / \{0\}$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
     \| f(x) \|  = 2^{\deg{f(x)}}
     \]
+    Define $\|0\|$ to be 0.
 with the following properties:
 \begin{itemize}
     \item $\| f(x)\| \cdot\| g(x)\| = \| f(x)g(x)\|$ 
@@ -61,8 +77,8 @@ with the following properties:
         \]
     \end{proof}
     \item For any $c(x) \in \Qx ^ {\times}$, $\|c(x)\| = 1$.
-\begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
-\item $\| f(x)\|$ is always positive %todo: proof
+    \begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
+    \item $\| f(x)\|$ is always positive or 0. Since $2 \in \bZ^+$, $2^n$ for $n\in \bZ^+$ is always positive by Appendix B, the norm $\in \bZ \cup \{0\}$
 \end{itemize}
 \end{definition}
 
