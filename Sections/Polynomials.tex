@@ -18,29 +18,99 @@ where $n\in\mathbb{Z}_{\geq0}$ and each coefficient $a_i$ lies in $\mathbb{Q}$ a
 
 \subsection{Ring Axioms}
 
-\begin{proof} %%needs to be fixed is kinda wishy washy
-We check the ring conditions.  Addition stays inside $\Qx$ because each
-coefficient $a_i+b_i$ is rational.  Multiplication also stays inside $\Qx$
-because each coefficient $c_k$ is built from finitely many sums and products of
-rational numbers.
-
-The zero polynomial is the additive identity because adding zero to every
-coefficient changes nothing.  The polynomial $-f(x)$ is the additive inverse of
-$f(x)$ because each coefficient becomes $a_i+(-a_i)=0$.  The constant polynomial
-$1$ is the multiplicative identity because multiplying by $1$ leaves the
-coefficients unchanged.
-
-The associative and commutative laws come from the same laws in $\mathbb{Q}$,
-coefficient by coefficient.  For instance, addition is associative because
+\begin{proof}
+Let
 \[
-(a_k+b_k)+c_k=a_k+(b_k+c_k)
+f(x)=a_0+a_1x+\cdots+a_mx^m,\qquad
+g(x)=b_0+b_1x+\cdots+b_nx^n,\qquad
+h(x)=c_0+c_1x+\cdots+c_\ell x^\ell.
 \]
-for each coefficient.  The multiplication laws and distributivity are checked in
-the same way from the rational-number laws.
 
-Finally, the zero polynomial has constant coefficient $0$, while the constant
-polynomial $1$ has constant coefficient $1$.  Since $0\neq1$ in $\mathbb{Q}$,
-have $0_{\Qx}\neq1_{\Qx}$.
+For addition, put missing coefficients equal to $0$. Then
+\[
+f(x)+g(x)=(a_0+b_0)+(a_1+b_1)x+\cdots+(a_N+b_N)x^N
+\]
+for some $N\geq m,n$. Since $\mathbb{Q}$ is closed under addition, each
+$a_i+b_i$ is rational. Hence $f(x)+g(x)\in\Qx$.
+
+For multiplication, for each $k$ with $0\leq k\leq m+n$, let
+\[
+P_k=\{(i,j)\in\mathbb{Z}^2:0\leq i\leq m,\ 0\leq j\leq n,\ i+j=k\}.
+\]
+Write
+\[
+P_k=\{(i_1,j_1),\ldots,(i_t,j_t)\}.
+\]
+Define
+\[
+d_k=a_{i_1}b_{j_1}+\cdots+a_{i_t}b_{j_t}.
+\]
+Each $d_k$ is rational, since it is made from finitely many additions and
+multiplications in $\mathbb{Q}$. Therefore
+\[
+f(x)g(x)=d_0+d_1x+\cdots+d_{m+n}x^{m+n}
+\]
+is in $\Qx$.
+
+The zero polynomial is the additive identity, since
+\[
+f(x)+0_{\Qx}
+=(a_0+0)+(a_1+0)x+\cdots+(a_m+0)x^m
+=f(x).
+\]
+The polynomial
+\[
+-f(x)=(-a_0)+(-a_1)x+\cdots+(-a_m)x^m
+\]
+is the additive inverse of $f(x)$ because $a_i+(-a_i)=0$ for every $i$.
+
+The constant polynomial $1_{\Qx}$ is the multiplicative identity. In the product
+$1_{\Qx}f(x)$, the coefficient of $x^i$ is $1\cdot a_i=a_i$. Hence
+\[
+1_{\Qx}f(x)=f(x).
+\]
+
+Addition is associative and commutative because each coefficient is added in
+$\mathbb{Q}$, and addition in $\mathbb{Q}$ is associative and commutative.
+
+Multiplication is commutative because the coefficient of $x^k$ in $f(x)g(x)$
+comes from all products $a_i b_j$ with $i+j=k$, while the coefficient of $x^k$
+in $g(x)f(x)$ comes from all products $b_j a_i$ with $j+i=k$. These are the
+same products, since multiplication in $\mathbb{Q}$ is commutative.
+
+Multiplication is associative because the coefficient of $x^k$ in
+$(f(x)g(x))h(x)$ comes from all products
+\[
+(a_i b_j)c_r
+\]
+with $i+j+r=k$, while the coefficient of $x^k$ in $f(x)(g(x)h(x))$ comes from
+all products
+\[
+a_i(b_j c_r)
+\]
+with $i+j+r=k$. These are equal because multiplication in $\mathbb{Q}$ is
+associative.
+
+Distributivity holds coefficient by coefficient. Put missing coefficients of
+$g(x)$ and $h(x)$ equal to $0$. Then the coefficient of $x^k$ in
+$f(x)(g(x)+h(x))$ uses terms of the form
+\[
+a_i(b_j+c_j).
+\]
+Since
+\[
+a_i(b_j+c_j)=a_i b_j+a_i c_j
+\]
+in $\mathbb{Q}$, we get
+\[
+f(x)(g(x)+h(x))=f(x)g(x)+f(x)h(x).
+\]
+
+Finally, $0_{\Qx}$ has constant coefficient $0$, while $1_{\Qx}$ has constant
+coefficient $1$. Since $0\neq1$ in $\mathbb{Q}$,
+\[
+0_{\Qx}\neq1_{\Qx}.
+\]
 \end{proof}
 
 \begin{definition}

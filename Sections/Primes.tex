@@ -1,0 +1,47 @@
+%================================================================
+
+\subsection{Definition}
+
+Define $p(x)\in\Qx$ to be prime if:
+
+\begin{itemize}
+    \item $\forall a(x),b(x)\in\Qx$ where $a(x)b(x)=p(x)$, either $a(x)$ or $b(x)$ is a unit
+    \item $p(x)$ is not a unit
+\end{itemize}
+
+Note that all linears $l(x)\in\Qx$ (polynomials of degree 1) are prime in $\Qx$ since they have a norm of 2. for any $a(x),b(x)\in\Qx$ where $a(x)b(x)=l(x)$, $\|a(x)\|\|b(x)\|=2$ (norm preserves multiplication), and $\|a(x)\|,\|b(x)\|\in\bZ^+$ (since they cannot be 0). Then, because 2 is prime in $\bZ^+$, $\|a(x)\|=1\lor\|b(x)\|=1$. This means that either $a$ or $b$ is a unit, and it follows then that $l(x)$ is a prime.
+
+%================================================================
+
+\subsection{Prime Factors}
+
+\begin{theorem}[Existence of prime factors]
+    $\forall a(x)\in\Qx$ where $a(x)$ isn't a unit, $\exists p(x)$ which is prime where $p(x)|a(x)$.\\
+\end{theorem}
+    
+
+When $a(x)=0$, it is divisible by all primes. For some polynomial $a(x)$ which isn't 0 or a unit, let $S=\{n(x)\in\Qx\mid n(x)\neq0\land\|{n(x)}\|\neq1\land n(x)\mid a(x)\}$. We know S is non-empty since $a(x)\in S$.\\
+
+Then consider $\|S\|=\{\|n(x)\|\in S\}$. Since $\forall n(x)\in\Qx$ where $n\neq0$, $\|n(x)\|\in\bZ^+$, $\|S\|\in\bZ^+$. Then, since it is non-empty, there must exist an element $\|m(x)\|\in\|S\|$ which corresponds to $m(x)\in S$ where $\|m(x)\|$ is minimal in $\|S\|$.\\
+
+Suppose $\exists k(x)\mid m(x)$, where $\|k(x)\|\neq\|m(x)\|$ and isn't a unit. Since $\|k(x)\|\mid \|m(x)\|$ and $\|k(x)\|,\|m(x)\|\in\bZ^+$, $ \|k(x)\|\leq \|m(x)\|$, but $\|k(x)\|\neq \|m(x)\|$, so $\|k(x)\|<\|m(x)\|$. Since $k(x)\mid m(x)$, then because $m(x)\mid a(x)$, $k(x)\mid a(x)$, so $k(x)\in|S$. Then, we have $\|k(x)\|\in\|S\|$ too, but $\|k(x)\|<\|m(x)\|$, so $\|m(x)\|$ is not minimal in $S\xrightarrow{}\xleftarrow{}$.\\
+
+Therefore, if $\exists k(x)\mid m(x)$, $\|k(x)\|=\|m(x)\|$ or it is a unit. For any $a(x)b(x)=m(x)$, either $a(x)$ is a unit or $\|a(x)\|=\|m(x)\|$. In the latter case, this implies that $b(x)$ is a unit, since preservation of norm after multiplication is unique to units. Consequently, $\forall a(x),b(x)\in\Qx$ where $a(x)b(x)=m(x)$, either $a(x)$ or $b(x)$ is a unit, and $m(x)$ isn't a unit, meaning that $m(x)$ is prime.\\
+
+%================================================================
+
+\subsection{Prime Factorisation}
+
+\begin{theorem}[Existence of a Prime Factorisation]
+    $\forall n(x)\in\Qx, \exists S\subset\Qx$ where $\forall a(x)\in S$, $a(x)$ is prime, such that $n(x)=\prod_{a(x)\in S}a(x)$.
+\end{theorem}
+
+$\forall n(x)\in\bZ^+,\exists m_1(x)\mid n(x)$ and $m_1(x)$ is prime. If $m_1(x)=n(x)$, then such $S$ exists where $S=\{m_1\}$. Otherwise, $\exists n_1(x)$ where $m_1(x)n_1(x)=n(x)$. It follows then that $\|m_1(x)\|\|n_1(x)\|=\|n(x)\|$, so $\|n_1(x)\|\mid\|n(x)\|$. Since they are both positive integers, this means that $\|n_1(x)\|\leq\|n(x)\|$. However, if $\|n_1(x)\|=\|n(x)\|$, then $\|m_1(x)\|=1$, meaning it is a unit and therefore can't be prime. Therefore, $\|n_1(x)\|<\|n(x)\|$.\\
+
+Similarly, either $n_1(x)$ is prime or $m_2(x)n_2(x)=n_1(x)$, where $m_2(x)$ is prime. If this terminates at $n_k(x)$ which is prime, we have $n(x)=n_k(x)\prod_{i=1}^{k}m_i(x)$, and all terms on the right hand side are prime. Then, we can have $S=\{n_k(x)\}\cup\{m_i\mid i\in\bZ \land 0<i\leq k\}$.\\
+
+Suppose this doesn't terminate. Then, we have set $\|N\|=\{\|n_i(x)\||i\in\bZ^+\}$ which is infinite, and $\forall k\in\bZ^+, \|n_k(x)\|>\|n_{k+1}(x)\|$. Also, $\|N\|\subset\bZ^+$ since the norm of all non-zero polynomials is a positive integer. Since it is non-empty, there must be a minimal element $\|n_m(x)\|$ in it. However, $\|n_m(x)\|>\|n_{m+1}(x)\|$, so it isn't minimal $\xrightarrow{}\xleftarrow{}$.\\
+ 
+Therefore, it must terminate, in which case there exists such set $S$.\\
+ 
+%================================================================
