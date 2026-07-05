@@ -22,9 +22,20 @@ Now $p(x)$ divides $a(x)p(x)g(x)$ because that term has a factor of $p(x)$. Also
 Thus $p(x)\mid f(x)$ or $p(x)\mid g(x)$.
 \end{proof}
 
+\begin{lemma}
+    If $f(x), g(x), h(x) \in \qx$, and $\gcd(f, g) = 1$ as well as $\gcd(f, h) = 1$ then $\gcd(f, gh) = 1$.
+\end{lemma}
+\begin{proof}
+    Assume for the sake of contradiction that there exists $a(x) \in \qx$, $\|a(x)\| > 1$ such that $\gcd(f, gh) = a$. Thus, $a \mid f$ and $a \mid gh$. We know that $a(x)$ must have a prime factor. Define it as $p(x)$. Now, we know that \[
+    p(x) \mid f(x) \qquad p(x) \mid g(x)h(x)
+    \]
+    By the Fundamental Lemma, $p(x) \mid g(x)$ or $p(x) \mid h(x)$. Without loss of generality, let $p(x) \mid g(x)$. Thus, since $p(x) \mid f(x)$, $\gcd(f(x), g(x)) \geq \|p(x)\| > 1$. However, this is a contradiction. Thus, $\gcd(f, gh) = 1$
+\end{proof}
+
+
 \begin{theorem}
     Let $f(x),g_i(x)\in\Qx$, and let $f(x) \mid \prod_{i=1}^n g_i(x)$. Then, there exists $k 
-    \leq n$ such that $\gcd(f(x), g_k(x)) \neq 1$. %%todo: check if i NEED divides or gcd() neq 1 is ok.
+    \leq n$ such that $\gcd(f(x), g_k(x)) \neq 1$. 
 \end{theorem}
 \begin{proof}
     Prove that if $\gcd(f(x), g_i(x)) = 1$ for all $i \leq n$, then $\gcd(f(x), \prod_{i=1}^n g_i(x)) = 1$.
