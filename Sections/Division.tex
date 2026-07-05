@@ -1,73 +1,18 @@
-For $\Qx$, the norm plays the role that size plays in integer division.  Since norms of nonzero
-polynomials are positive integers, we can use the well-ordering principle to
-pick a remainder of smallest norm.
+For $\Qx$, the norm plays the role that size plays in integer division. Since norms of nonzero polynomials are positive integers, we can use the well-ordering principle to pick a remainder of smallest norm.
 
 \begin{theorem}[Division algorithm in $\Qx$]
-Let $f(x),g(x)\in\Qx$ with $g(x)\neq0$.  Then there exist unique
-polynomials $q(x),r(x)\in\Qx$ such that
-\[
-f(x)=q(x)g(x)+r(x),
-\]
-where either
-\[
-r(x)=0
-\]
-or
-\[
-\|r(x)\|<\|g(x)\|.
-\]
+Let $f(x),g(x)\in\Qx$ with $g(x)\neq0$. Then there exist unique polynomials $q(x),r(x)\in\Qx$ such that $f(x)=q(x)g(x)+r(x)$, where either $r(x)=0$ or $\|r(x)\|<\|g(x)\|$.
 \end{theorem}
 
 \begin{proof}
 \textbf{Existence.}
-Look at all possible remainders after subtracting multiples of $g$ from $f$:
-\[
-S=\{\,f(x)-q(x)g(x):q(x)\in\Qx\,\}.
-\]
-If $0\in S$, then $f=qg$ for some $q$, so
-\[
-f=qg+0,
-\]
-and the result holds with $r=0$.
+Look at all possible remainders after subtracting multiples of $g$ from $f$: $S=\{\,f(x)-q(x)g(x):q(x)\in\Qx\,\}$. If $0\in S$, then $f=qg$ for some $q$, so $f=qg+0$, and the result holds with $r=0$.
 
-Now suppose $0\notin S$.  Then every element of $S$ is nonzero, so
-each element has a norm in $\mathbb{Z}^+$.  Define
-\[
-D=\{\,\|s(x)\|:s(x)\in S\,\}\subseteq\mathbb{Z}^+.
-\]
-The set $D$ is nonempty because $f-0g=f$ lies in $S$.  By the well-ordering
-principle, $D$ has a smallest element.  Choose $r\in S$ with minimum norm.
-Since $r\in S$, there exists $q\in\Qx$ such that
-\[
-r=f-qg.
-\]
-Equivalently,
-\[
-f=qg+r.
-\]
+Now suppose $0\notin S$. Then every element of $S$ is nonzero, so each element has a norm in $\mathbb{Z}^+$. Define $D=\{\,\|s(x)\|:s(x)\in S\,\}\subseteq\mathbb{Z}^+$. The set $D$ is nonempty because $f-0g=f$ lies in $S$. By the well-ordering principle, $D$ has a smallest element. Choose $r\in S$ with minimum norm. Since $r\in S$, there exists $q\in\Qx$ such that $r=f-qg$. Equivalently, $f=qg+r$.
 
-It remains to show that $\|r(x)\|<\|g(x)\|$.  Suppose instead that
-\[
-\|r(x)\|\geq\|g(x)\|.
-\]
-Write
-\[
-r(x)=a_mx^m+\cdots
-\qquad\text{and}\qquad
-g(x)=b_nx^n+\cdots,
-\]
-where $a_m,b_n\neq0$, $m=\deg(r)$, and $n=\deg(g)$.  Since
-$\|r(x)\|\geq\|g(x)\|$ means $2^m\geq2^n$, we get $m\geq n$.  Since $b_n\neq0$
-and $b_n\in\mathbb{Q}$, the rational number $a_m/b_n$ exists.  Define
-\[
-r^*(x)=r(x)-\frac{a_m}{b_n}x^{m-n}g(x).
-\]
-The second term has leading term $a_mx^m$, so the leading term of $r$ cancels.
-Thus either $r^*=0$ or
-\[
-\|r^*(x)\|<\|r(x)\|.
-\]
-Also,
+It remains to show that $\|r(x)\|<\|g(x)\|$. Suppose instead that $\|r(x)\|\geq\|g(x)\|$. Write $r(x)=a_mx^m+\cdots$ and $g(x)=b_nx^n+\cdots$, where $a_m,b_n\neq0$, $m=\deg(r)$, and $n=\deg(g)$. Since $\|r(x)\|\geq\|g(x)\|$ means $2^m\geq2^n$, we get $m\geq n$. Since $b_n\neq0$ and $b_n\in\mathbb{Q}$, the rational number $a_m/b_n$ exists. Define $r^*(x)=r(x)-\frac{a_m}{b_n}x^{m-n}g(x)$.
+
+The second term has leading term $a_mx^m$, so the leading term of $r$ cancels. Thus either $r^*=0$ or $\|r^*(x)\|<\|r(x)\|$. Also,
 \[
 \begin{aligned}
 r^*
@@ -75,29 +20,10 @@ r^*
 &=f-\left(q+\frac{a_m}{b_n}x^{m-n}\right)g.
 \end{aligned}
 \]
-Therefore $r^*\in S$.  If $r^*=0$, then $0\in S$, which is not the case we are
-in.  If $r^*\neq0$, then $r^*$ is in $S$ and has smaller norm than $r$,
-contradicting how we chose $r$.  Therefore our assumption was false, and
-\[
-\|r(x)\|<\|g(x)\|.
-\]
+Therefore $r^*\in S$. If $r^*=0$, then $0\in S$, which is not the case we are in. If $r^*\neq0$, then $r^*$ is in $S$ and has smaller norm than $r$, contradicting how we chose $r$. Therefore our assumption was false, and $\|r(x)\|<\|g(x)\|$.
 
 \textbf{Uniqueness.}
-Suppose
-\[
-f=q_1g+r_1=q_2g+r_2,
-\]
-where $r_1$ and $r_2$ are both either zero or have norm less than $\|g(x)\|$.
-Subtracting gives
-\[
-g(q_1-q_2)=r_2-r_1.
-\]
-Assume $q_1\neq q_2$.  Then $q_1-q_2\neq0$, and since $\Qx$ has no
-zero divisors,
-\[
-g(q_1-q_2)\neq0.
-\]
-Hence
+Suppose $f=q_1g+r_1=q_2g+r_2$, where $r_1$ and $r_2$ are both either zero or have norm less than $\|g(x)\|$. Subtracting gives $g(q_1-q_2)=r_2-r_1$. Assume $q_1\neq q_2$. Then $q_1-q_2\neq0$, and since $\Qx$ has no zero divisors, $g(q_1-q_2)\neq0$. Hence
 \[
 \begin{aligned}
 \|g(x)(q_1(x)-q_2(x))\|
@@ -107,9 +33,5 @@ Hence
 &\geq\|g(x)\|.
 \end{aligned}
 \]
-But $r_2-r_1$ is either zero or has norm strictly less than $\|g(x)\|$, since
-each of $r_1$ and $r_2$ is either zero or has norm less than $\|g(x)\|$, so
-their degrees are both less than $\deg(g)$ when they are nonzero.  This is
-impossible.
-Therefore $q_1=q_2$.  Substituting back gives $r_1=r_2$.
+But $r_2-r_1$ is either zero or has norm strictly less than $\|g(x)\|$, since each of $r_1$ and $r_2$ is either zero or has norm less than $\|g(x)\|$, so their degrees are both less than $\deg(g)$ when they are nonzero. This is impossible. Therefore $q_1=q_2$. Substituting back gives $r_1=r_2$.
 \end{proof}
