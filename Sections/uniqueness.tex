@@ -22,7 +22,9 @@ Now, we have 2 cases, as $\beta_k \neq \alpha_j$. \\
 \textbf{Case 2.1: }$\beta_k > \alpha_j$ 
 \begin{align*}
     \prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m q_k^{\beta_k} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m q_j^{\alpha_j} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
-    \prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m q_k^{\beta_k-\alpha_j} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
+    q_k^{\beta_k-\alpha_j} \m q_k^{\beta_k} \prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= q_k^{\beta_k-\alpha_j} \m q_j^{\alpha_j} \m \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
+     q_k^{\beta_k}  \m q_k^{\beta_k-\alpha_j} \m\prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= q_k^{\beta_k}\m \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
+    q_k^{\beta_k-\alpha_j} \m\prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
 \end{align*}
 Thus, $q_k^{\beta_k-\alpha_j} \mid \prod _{i=1}^{j-1}p_i(x)^{\alpha_i}$ or $q_k^{\beta_k-\alpha_j} \mid \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}$ by the Fundamental Lemma. However, neither can be true as $\forall p_i \in S \quad \gcd(p_i^{\alpha_i}, q_k^{\beta_k}) = 1$. Thus, this is a contradiction.\\
 \textbf{Case 2.2: }$\beta_k <\alpha_j$ can be proven using an analogous argument. 
@@ -43,4 +45,3 @@ Thus, $q_k^{\beta_k-\alpha_j} \mid \prod _{i=1}^{j-1}p_i(x)^{\alpha_i}$ or $q_k^
     Thus, this is a contradiction and $S$ is empty. An analogous argument can be made since  $\gcd(p, q^j) = 1$ proving that $ \gcd(p^k, q^j) = 1$.
 \end{proof}
 
-%%todo: exponents for polynominals and also k-j doesnt work necessarily 
