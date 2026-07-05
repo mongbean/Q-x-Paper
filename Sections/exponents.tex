@@ -1,18 +1,31 @@
+%================================================================
+
+\subsection{Definition}
+
+We define exponentiation $a^n$ for $a\in R$, where $R$ is some unital ring, and $n\in\bZ^+\cup\{0\}$ to be:
+
+\begin{itemize}
+    \item $1$ if $n=0$
+    \item $a^{n-1}a$ if $n>0$
+\end{itemize}
+
+%================================================================
+
+\subsection{Power laws}
+
 \begin{lemma}
-    $a^na^m = a^{n+m} \quad \forall a \in \bZ,\, n, m \in \bZ \cup \{0\}$
+    $a^na^m = a^{n+m} \quad \forall a \in R,\, n, m \in \bZ^+ \cup \{0\}$
 \end{lemma}
 \begin{proof}
-    Let $S= \left \{ n \in \bZ^+ \mid \exists m \in \bZ^+ \cup \{0\} \text{ s.t. } a^na^m \neq a^{n+m}\right \}$. For the sake of contradiction, S is not empty. By the well-ordering principle, since $S\subset \bZ^+$, there must be a least element $l\in S$. First, $\forall m \in \bZ^+$, 
+    Let $S= \left \{ n \in \bZ^+ \mid \exists m \in \bZ^+ \cup \{0\} \text{ s.t. } a^na^m \neq a^{n+m}\right \}$. For the sake of contradiction, S is not empty. By the well-ordering principle, since $S\subset \bZ^+\cup\{0\}$, there must be a least element $l\in S$. First, $\forall m \in \bZ^+\cup\{0\}$, 
     \begin{align*}
-        a \cdot a^{m-1} &= a^m \\
-        a^1 \cdot a^{m-1} &= a^m 
+        a^0 \cdot a^m &= a^m \\
     \end{align*}
-    Thus, $1 \notin S$ as $m-1 \in \bZ^+$. Therefore, by NIBZO $l>1$ and $(l-1) \in \bZ^+$, but $l-1 \notin S$.
+    Thus, $0 \notin S$. Therefore, by NIBZO $l>0$ and $l \in \bZ^+$. Then, $l-1\in\bZ^+\cup\{0\}$ but $l-1 \notin S$ since $l$ is minimal.
     \begin{align*}
         a^{l-1} a^m &= a^{l+m-1}\\
         a \m a^{l-1} a^m &= a \m a^{l+m-1}\\
         a^la^m&=a^{l+m}
     \end{align*}
-    Thus, $l \notin S$. However, this contradicts that $l$ is the least element of $S$. So, $S$ must be empty.
+    Thus, $l \notin S \xrightarrow{}\xleftarrow{}$. Then, $S$ must be empty.
 \end{proof}
-%%todo: we prob need for polynominals
