@@ -1,8 +1,7 @@
-%TODO: Ring, Order axioms and WOP; basic arithmetic and lemmas
-%todo: ab \geq a for a, b in z+, and ab = a iff b is unit
-
-\begin{definition}[Integer axioms]
-The integers $\bZ$ have addition and multiplication satisfying:
+\subsection{Ring and Order Axioms}
+The integers $\bZ$ have addition and multiplication satisfying two sets of axioms.
+\begin{definition}[Ring axioms]
+    The following axioms define a \textbf{Ring}.
 \begin{itemize}
     \item $a+b\in\bZ$ and $ab\in\bZ$ for all $a,b\in\bZ$.
     \item $a+b=b+a$ and $ab=ba$.
@@ -15,7 +14,7 @@ The integers $\bZ$ have addition and multiplication satisfying:
 \end{definition}
 
 \begin{definition}[Order axioms]
-Let $\bZ^+$ be the set of positive integers. We assume:
+Let $\bZ^+$ be the set of positive integers. The following axioms define an \textbf{Ordered Ring}
 \begin{itemize}
     \item If $a,b\in\bZ^+$, then $a+b\in\bZ^+$.
     \item If $a,b\in\bZ^+$, then $ab\in\bZ^+$.
@@ -32,6 +31,8 @@ For $a,b\in\bZ$, define $a<b$ if $b-a\in\bZ^+$. Define $a>b$ if $b<a$. Define $a
 Every nonempty subset of $\bZ^+$ has a least element.
 \end{definition}
 
+\subsection{Basic Arithmetic}
+%todo: remove unnecessary ones
 \begin{lemma}
 $0\neq1$.
 \end{lemma}
@@ -84,13 +85,6 @@ If $a\leq b$ and $x\leq y$, then $a+x\leq b+y$.
 If both inequalities are equalities, the result is clear. Otherwise, the differences $b-a$ and $y-x$ are each either positive or zero. Their sum is therefore positive or zero. But $(b+y)-(a+x)=(b-a)+(y-x)$, so $a+x\leq b+y$.
 \end{proof}
 
-\begin{lemma}[NIBZO]
-There is no integer strictly between $0$ and $1$.
-\end{lemma}
-
-\begin{proof}
-Suppose there exists $n\in\bZ$ such that $0<n<1$. Let $S=\{n\in\bZ:0<n<1\}$. Then $S$ is nonempty and $S\subseteq\bZ^+$. By WOP, $S$ has a least element. Call it $m$. Since $0<m$ and $m<1$, multiplying $m<1$ by the positive integer $m$ gives $m^2<m$. Also $m^2\in\bZ^+$ by multiplicative closure, so $0<m^2<m<1$. Thus $m^2\in S$, contradicting the minimality of $m$. Therefore $S$ is empty.
-\end{proof}
 
 \begin{lemma}
 If $a,b\in\bZ^+$, then $ab\geq a$.
@@ -140,12 +134,3 @@ So $m^2\in S$, but $m^2<m$.  This contradicts the choice of $m$ as the least
 element of $S$.  Therefore $S$ is empty.
 \end{proof}
 
-\begin{definition}
-    Define the \textbf{exponent} $\forall a \in \bZ, b \in \bZ \cup \{0\}$ as \[
-    a^b = \begin{cases}
-        1 & \text{if } b=0\\
-        a \cdot a^{b-1} & \text{otherwise}
-    \end{cases}
-    \]
-\end{definition}
-For properties of exponents, see Appendix B.

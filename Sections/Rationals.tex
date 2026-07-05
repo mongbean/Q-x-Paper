@@ -62,8 +62,19 @@ By the one axiom,
 \[(a,b)\]
  
 \noindent\textbf{Distributivity: }
+For $x,y,z\in \bQ$, we have $x(y+z)=xy+xz$. 
+\begin{proof}
+Suppose $x=(a,b),y=(c,d),z=(e,f)$. Then
+\begin{align*}
+x(y+z)&=(a,b)\cdot((c,d)+(e,f))=(a,b)\cdot(cf+de,df)\\
+&=(a(cf+de),b(df)) \\
+&=(acf+ade,bdf) 
+\end{align*}
+For the other side, 
+\[xy=(a,b)\cdot(c,d)=(ac,bd) \qquad \text{and}\qquad xz=(a,b)\cdot(e,f)=(ae,bf)\]
+ We then have $xy+xz=(ac,bd)+(ae,bf)=(acbf+bdae,bdbf)=(acf+dae,dbf)=(acf+ade,bdf)$. Hence $x(y+z)=xy+xz$. Right distributivity follows immediately, since $(y+z)x=x(y+z)=xy+xz=yx+zx$.
 
-We prove for $x,y,z\in \bQ$, we have $x(y+z)=xy+xz$. Suppose $x=(a,b),y=(c,d),z=(e,f)$. Then $x(y+z)=(a,b)\cdot((c,d)+(e,f))=(a,b)\cdot(cf+de,df)=(a(cf+de),b(df))=(acf+ade,bdf)$. We also have $xy=(a,b)\cdot(c,d)=(ac,bd)$ and $xz=(a,b)\cdot(e,f)=(ae,bf)$. We then have $xy+xz=(ac,bd)+(ae,bf)=(acbf+bdae,bdbf)=(acf+dae,dbf)=(acf+ade,bdf)$. Hence $x(y+z)=xy+xz$. Right distributivity follows immediately, since $(y+z)x=x(y+z)=xy+xz=yx+zx$.
+\end{proof}
 
 \subsection{Equivalence}
 Two rationals are equal if and only if they can be simplified to each other. In other words, 
