@@ -21,15 +21,20 @@ Now $p(x)$ divides $a(x)p(x)g(x)$ because that term has a factor of $p(x)$. Also
 
 Thus $p(x)\mid f(x)$ or $p(x)\mid g(x)$.
 \end{proof}
-\begin{lemma}
-    If $f(x), g(x), h(x) \in \qx$, and $\gcd(f, g) = 1$ as well as $\gcd(f, h) = 1$ then $\gcd(f, gh) = 1$.
-\end{lemma}
-\begin{proof}
-    %%todo:proof
-\end{proof}
-%%todo: lemma p | prod(a_i), p |a_k if gcd(p, a_i) = 1 for i \neq k.
+
 \begin{theorem}
     Let $f(x),g_i(x)\in\Qx$, and let $f(x) \mid \prod_{i=1}^n g_i(x)$. Then, there exists $k 
-    leq n$ such that $\gcd(f(x), g_k(x)) \neq 1$.
+    \leq n$ such that $\gcd(f(x), g_k(x)) \neq 1$. %%todo: check if i NEED divides or gcd() neq 1 is ok.
 \end{theorem}
+\begin{proof}
+    Prove that if $\gcd(f(x), g_i(x)) = 1$ for all $i \leq n$, then $\gcd(f(x), \prod_{i=1}^n g_i(x)) = 1$.
+    Let $S= {j \in \pZ | \gcd(f(x), \prod_{i=1}^n g_i(x)) \neq 1}.$. For the sake of contradiction, S is not empty. Then, since $S\subseteq \pZ$, by the well-ordering principle, there exists a least element $l \in S$. Note that if $j=1$, then \[
+        \gcd(f(x), \prod_{i=1}^1 g_i(x))  = \gcd(f(x), g_1(x))  =  1
+    \]which is a contradiction. Thus, since $1 \notin S$, $l>1$ and $l-1 \notin S$. So, we know that \[
+    \gcd(f(x), \prod_{i=1}^{l-1} g_i(x)) =  1
+    \] Since $\gcd(f(x), \prod_{i=1}^{l-1} g_i(x)) =  1$ and $\gcd(f(x), g_l(x)) =  1$, $\gcd(f(x), g_l(x)\prod_{i=1}^{l-1} g_i(x)) =\gcd(f(x), \prod_{i=1}^{l} g_i(x)) =  1$. However, since $l \in S$, this is a contradiction. Thus, $S$ must be empty.
+    As $\gcd(f(x), \prod_{i=1}^n g_i(x)) = 1$ is a contradiction to the fact that $f(x) \mid \prod_{i=1}^n g_i(x)$,  $\gcd(f(x), g_i(x)) $ cannot equal 1 for all $i \leq n$.
+\end{proof}
+
+
 

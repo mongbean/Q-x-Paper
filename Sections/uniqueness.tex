@@ -28,6 +28,19 @@ Thus, $q_k^{\beta_k-\alpha_j} \mid \prod _{i=1}^{j-1}p_i(x)^{\alpha_i}$ or $q_k^
 \textbf{Case 2.2: }$\beta_k <\alpha_j$ can be proven using an analogous argument. 
 \end{proof}
 
-%%todo: lemma that gcd(p^k, q^k) = 1 for gcd(p, q) = 1 (or prime)
-%%todo: lemma p | prod(a_i), p |a_k if gcd(p, a_i) = 1 for i \neq k.
-%%todo: exponents for polynominals and also k-j doesnt 
+\begin{lemma}
+    $ \gcd(p^k, q^j) = 1$ for all $p, q \in \qx$ such that $\gcd(p, q) = 1$.
+\end{lemma}
+\begin{proof}
+    First, note that if $k=0$ or $j=0$, $\gcd(f(x), 1) = 1 \forall f(x)\in \qx$.
+    Next, prove that $\gcd(p, q^j) = 1$. Let $S=\left\{i \in \pZ\mid \gcd(p, q^i) \neq 1 \right\}$ For the sake of contradiction, let S be nonempty. By the well-ordering principle, there exists a least element $l \in S$.
+    Note that if $i=1$,  $\gcd(p, q^1) = \gcd(p, q) = 1$. Thus, $1 \notin S$ and $l>1$, and $l-1 \notin S$.
+    \begin{align*}
+        \gcd(p, q^{l-1}) &= 1 \\
+        \gcd(p, q) &= 1
+        \gcd(p, q^l) &= 1
+    \end{align*}
+    Thus, this is a contradiction and $S$ is empty. An analogous argument can be made since  $\gcd(p, q^j) = 1$ proving that $ \gcd(p^k, q^j) = 1$.
+\end{proof}
+
+%%todo: exponents for polynominals and also k-j doesnt work necessarily 
