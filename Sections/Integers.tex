@@ -1,6 +1,113 @@
 %TODO: Ring, Order axioms and WOP; basic arithmetic and lemmas
 %todo: ab \geq a for a, b in z+, and ab = a iff b is unit
 
+\begin{definition}[Integer axioms]
+The integers $\bZ$ have addition and multiplication satisfying:
+\begin{itemize}
+    \item $a+b\in\bZ$ and $ab\in\bZ$ for all $a,b\in\bZ$.
+    \item $a+b=b+a$ and $ab=ba$.
+    \item $(a+b)+c=a+(b+c)$ and $(ab)c=a(bc)$.
+    \item $a(b+c)=ab+ac$.
+    \item There is an additive identity $0\in\bZ$ such that $a+0=a$.
+    \item There is a multiplicative identity $1\in\bZ$ such that $a\cdot1=a$.
+    \item For every $a\in\bZ$, there is $-a\in\bZ$ such that $a+(-a)=0$.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Order axioms]
+Let $\bZ^+$ be the set of positive integers. We assume:
+\begin{itemize}
+    \item If $a,b\in\bZ^+$, then $a+b\in\bZ^+$.
+    \item If $a,b\in\bZ^+$, then $ab\in\bZ^+$.
+    \item $0\notin\bZ^+$.
+    \item For every $a\in\bZ$, exactly one of $a\in\bZ^+$, $a=0$, or $-a\in\bZ^+$ is true.
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+For $a,b\in\bZ$, define $a<b$ if $b-a\in\bZ^+$. Define $a>b$ if $b<a$. Define $a\leq b$ if $a<b$ or $a=b$, and define $a\geq b$ if $a>b$ or $a=b$.
+\end{definition}
+
+\begin{definition}[Well-Ordering Principle]
+Every nonempty subset of $\bZ^+$ has a least element.
+\end{definition}
+
+\begin{lemma}
+$0\neq1$.
+\end{lemma}
+
+\begin{proof}
+By trichotomy, exactly one of $1\in\bZ^+$, $1=0$, or $-1\in\bZ^+$ is true. If $-1\in\bZ^+$, then by multiplicative closure $(-1)(-1)\in\bZ^+$. Since $(-1)(-1)=1$, this gives $1\in\bZ^+$, contradicting trichotomy. Thus $-1\notin\bZ^+$. Also $1$ cannot equal $0$, since then $-1=0$, which would again contradict trichotomy. Hence $1\in\bZ^+$, so $1\neq0$.
+\end{proof}
+
+\begin{lemma}
+If $a+b=a+b'$, then $b=b'$.
+\end{lemma}
+
+\begin{proof}
+Add $-a$ to both sides. Then $(-a)+(a+b)=(-a)+(a+b')$. By associativity, $((-a)+a)+b=((-a)+a)+b'$, so $0+b=0+b'$. Hence $b=b'$.
+\end{proof}
+
+\begin{lemma}
+For all $a,b\in\bZ$, $a\cdot0=0$, $-(-a)=a$, $(-a)b=-(ab)$, and $(-a)(-b)=ab$.
+\end{lemma}
+
+\begin{proof}
+First, $a\cdot0=a(0+0)=a\cdot0+a\cdot0$. By additive cancellation, $a\cdot0=0$.
+
+Next, since $a+(-a)=0$, the element $a$ is an additive inverse of $-a$. By uniqueness of additive inverses, $-(-a)=a$.
+
+Also, $ab+(-a)b=(a+(-a))b=0b=0$, so $(-a)b$ is the additive inverse of $ab$. Thus $(-a)b=-(ab)$. Finally, $(-a)(-b)=-\big(a(-b)\big)=-(-(ab))=ab$.
+\end{proof}
+
+\begin{lemma}
+For $a,b,c\in\bZ$, if $a\leq b$ and $b\leq c$, then $a\leq c$.
+\end{lemma}
+
+\begin{proof}
+If one of the inequalities is equality, the result is immediate. Now suppose $a<b$ and $b<c$. Then $b-a\in\bZ^+$ and $c-b\in\bZ^+$. By additive closure, $(b-a)+(c-b)\in\bZ^+$. But $(b-a)+(c-b)=c-a$, so $c-a\in\bZ^+$. Thus $a<c$, and hence $a\leq c$.
+\end{proof}
+
+\begin{lemma}
+For $a,b\in\bZ$, exactly one of $a<b$, $a=b$, or $b<a$ is true.
+\end{lemma}
+
+\begin{proof}
+Apply trichotomy to $b-a$. Exactly one of $b-a\in\bZ^+$, $b-a=0$, or $-(b-a)\in\bZ^+$ is true. These are exactly $a<b$, $a=b$, and $b<a$.
+\end{proof}
+
+\begin{lemma}
+If $a\leq b$ and $x\leq y$, then $a+x\leq b+y$.
+\end{lemma}
+
+\begin{proof}
+If both inequalities are equalities, the result is clear. Otherwise, the differences $b-a$ and $y-x$ are each either positive or zero. Their sum is therefore positive or zero. But $(b+y)-(a+x)=(b-a)+(y-x)$, so $a+x\leq b+y$.
+\end{proof}
+
+\begin{lemma}[NIBZO]
+There is no integer strictly between $0$ and $1$.
+\end{lemma}
+
+\begin{proof}
+Suppose there exists $n\in\bZ$ such that $0<n<1$. Let $S=\{n\in\bZ:0<n<1\}$. Then $S$ is nonempty and $S\subseteq\bZ^+$. By WOP, $S$ has a least element. Call it $m$. Since $0<m$ and $m<1$, multiplying $m<1$ by the positive integer $m$ gives $m^2<m$. Also $m^2\in\bZ^+$ by multiplicative closure, so $0<m^2<m<1$. Thus $m^2\in S$, contradicting the minimality of $m$. Therefore $S$ is empty.
+\end{proof}
+
+\begin{lemma}
+If $a,b\in\bZ^+$, then $ab\geq a$.
+\end{lemma}
+
+\begin{proof}
+Since $b\in\bZ^+$, NIBZO gives $1\leq b$. If $b=1$, then $ab=a$. If $1<b$, then $b-1\in\bZ^+$. Since $a\in\bZ^+$, we get $a(b-1)\in\bZ^+$. But $a(b-1)=ab-a$, so $a<ab$. Hence $a\leq ab$.
+\end{proof}
+
+\begin{lemma}
+If $a,b\in\bZ^+$, then $ab=a$ if and only if $b=1$.
+\end{lemma}
+
+\begin{proof}
+If $b=1$, then $ab=a$. Conversely, suppose $ab=a$. If $b\neq1$, then since $b\in\bZ^+$ and $1\leq b$, we have $1<b$. Thus $b-1\in\bZ^+$. Since $a\in\bZ^+$, $a(b-1)\in\bZ^+$. But $a(b-1)=ab-a=0$, contradicting $0\notin\bZ^+$. Therefore $b=1$.
+\end{proof}
+
 \begin{lemma}[NIBZO]
 There is no integer strictly between $0$ and $1$.  Equivalently, if
 $n\in\mathbb{Z}$ and
