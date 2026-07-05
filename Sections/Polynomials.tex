@@ -128,7 +128,7 @@ coefficient $1$. Since $0\neq1$ in $\mathbb{Q}$,
         by Multiplied Sums. Notice that $i+j = m+n$ only once. However, $a_mb_n$ are both nonzero, so $a_mb_n \neq 0$. Thus, we have a nonzero term $a_mb_nx^{m+n} \neq 1$.  
 \end{proof}
 
-\begin{definition} %TODO: define units, then multiplication by a unit preserves norm, and that it is unique to units
+\begin{definition}
     For $f(x) \in \Qx / \{0\}$, let the \textbf{norm}, or $\| f(x)\|$ be equal to \[
     \| f(x) \|  = 2^{\deg{f(x)}}
     \]
@@ -148,30 +148,25 @@ with the following properties:
     \end{proof}
     \item For any $c(x) \in \Qx ^ {\times}$, $\|c(x)\| = 1$.
     \begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
-    \item $\| f(x)\|$ is always positive or 0. Since $2 \in \bZ^+$, $2^n$ for $n\in \bZ^+$ is always positive by Appendix B, the norm $\in \bZ \cup \{0\}$
+    \item $\| f(x)\| \in \bZ \cup \{0\}$. Since $2 \in \bZ^+$, $2^n$ for $n\in \bZ^+$ is always positive by Appendix B, the norm $\in \bZ \cup \{0\}$
 \end{itemize}
 \end{definition}
 
-% \begin{lemma}[Multiplication] i commented this out bc i kinda did it with set notation up there
-
-% %%%TODO: this is not rigorous (use set not)
-% For multiplication, if
-% \[
-% f(x)=a_0+a_1x+\cdots+a_mx^m
-% \qquad\text{and}\qquad
-% g(x)=b_0+b_1x+\cdots+b_nx^n,
-% \]
-% then
-% \[
-% f(x)g(x)=c_0+c_1x+\cdots+c_{m+n}x^{m+n},
-% \]
-% where each coefficient $c_k$ is found by adding all products $a_ib_j$ for which
-% the exponents satisfy $i+j=k$.  For example,
-% \[
-% c_0=a_0b_0,\qquad c_1=a_0b_1+a_1b_0,\qquad
-% c_{m+n}=a_mb_n.
-% \]
-% \end{lemma}
+\begin{lemma}
+    $\|f(x)g(x)\| = \|f(x)\| \Leftrightarrow g(x) \in \qx^{\times}$ 
+\end{lemma}
+\begin{proof}
+    \begin{itemize}
+        \item  $ g(x) \in \qx^{\times} \Rightarrow \|f(x)g(x)\| = \|f(x)\|$
+        \begin{proof}
+            Since $\|g(x)\| = 1$, $\|f(x)g(x)\| = \|f(x)\| \m 1 = \|f(x)\|$.
+        \end{proof}
+        \item $\|f(x)g(x)\| = \|f(x)\| \Rightarrow g(x) \in \qx^{\times}$ 
+        \begin{proof}
+            Since $\|f(x)g(x)\| = \|f(x)\| \|g(x)\|$. As $ \|f(x)\|, \|g(x)\| \in \bZ^+$, if $\|f(x)g(x)\| = \|f(x)\|$, $\|g(x)\| = 1$. Thus, $g(x) \in \qx^{\times}$.
+        \end{proof}
+    \end{itemize}
+\end{proof}
 
 \begin{definition}[Zero, one, and negatives]
 The zero element of $\Qx$ is the polynomial $0_{Qx} = 0$. Define the degree of $0_{Qx}$ to be $-\infty$.  
