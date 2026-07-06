@@ -19,7 +19,7 @@ $a_i+b_i$ is rational. Hence $f(x)+g(x)\in\Qx$.
 \end{definition}
 
 \subsection{Ring Axioms}
-The rational polynomials also follow the ring axioms.
+The rational polynomials also follow the ring axioms. 
 
 \noindent\textbf{Commutativity of Addition: } 
 Addition is commutative because each coefficient is added in
@@ -66,11 +66,7 @@ in $\mathbb{Q}$, we get
 f(x)(g(x)+h(x))=f(x)g(x)+f(x)h(x).
 \]
 
-Finally, $0_{\Qx}$ has constant coefficient $0$, while $1_{\Qx}$ has constant
-coefficient $1$. Since $0\neq1$ in $\mathbb{Q}$,
-\[
-0_{\Qx}\neq1_{\Qx}.
-\]
+
 \noindent\textbf{Additive Identity: }
 The zero polynomial, $0_{\Qx} = 0$, is the additive identity, as 
 \[
@@ -123,11 +119,11 @@ Just like integer rings, the polynomials have units as well that follow the same
     First, prove $u(x) \in \bQ \; \Rightarrow  \; u(x) \in \qx^{\times}$. This is a collorary of the Multiplicative Inverse property of $\bQ$. 
     Second, prove $u(x) \in \qx^{\times} \; \Rightarrow \; u(x) \in \bQ$. Define $u(x)=\sum_{i=0}^{n} a_i x^i$ and $v(x)=\sum_{j=0}^{m} b_j x^j$, with $n$ and $m$ the degrees of $u$ and $v$ respectively, then 
         \begin{align*}
-        u(x)v(x)&=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^i x^j=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}
+        u(x)v(x)&=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}
         \end{align*}
-        by Multiplied Sums. Notice that $i+j = m+n$ only once. However, $a_mb_n$ are both nonzero, so $a_mb_n \neq 0$. Thus, we have a nonzero term $a_mb_nx^{m+n} \neq 1$.  
+        Notice that $i+j = m+n$ only once. However, $a_mb_n$ are both nonzero, so $a_mb_n \neq 0$. Thus, we have a nonzero term $a_mb_nx^{m+n} \neq 1$.  
 \end{proof}
-Notice that because units in $\qx$ are constants, this makes every polynomial have an equivalent one that is monic.
+Notice that because units in $\qx$ are constants, every polynomial has an equivalent one that is monic.
 
 \subsection{The Norm}
 We need a method to define size of a polynomial. The natural choice is its degree; however, this is not multiplicative, and norms are more helpful when they are multiplicative.
@@ -140,9 +136,9 @@ with the following properties:
 \begin{itemize}
     \item $\| f(x)\| \cdot\| g(x)\| = \| f(x)g(x)\|$ 
     \begin{proof}
-        By Multiplied Sums, if $f(x)=\sum_{i=0}^{n} a_i x^i$ and $g(x)=\sum_{j=0}^{m} b_j x^j$, with $n$ and $m$ the degrees of $f$ and $g$ respectively, then 
+        If $f(x)=\sum_{i=0}^{n} a_i x^i$ and $g(x)=\sum_{j=0}^{m} b_j x^j$, then 
         \begin{align*}
-        f(x)g(x)&=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^i x^j=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}
+        f(x)g(x)&=\sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}
         \end{align*}
         Notice that to find the degree of $f(x)g(x)$, we take the maximum value of $i+j$ which is their respective maximums, $n+m$, so:
         \[
@@ -151,24 +147,22 @@ with the following properties:
     \end{proof}
     \item For any $c(x) \in \Qx ^ {\times}$, $\|c(x)\| = 1$.
     \begin{proof} Since $\deg{c(x)} = 0$, $\|c(x)\|=2^0 = 1$.\end{proof}
-    \item $\| f(x)\| \in \bZ \cup \{0\}$. Since $2 \in \bZ^+$, $2^n$ for $n\in \bZ^+$ is always positive by Appendix B, the norm $\in \bZ \cup \{0\}$
-\end{itemize}
+    \item $\| f(x)\| \in \bZ \cup \{0\}$. \begin{proof} 
+    Since $2 \in \bZ^+$, $2^n$ for $n\in \bZ^+$ is always positive by Appendix B, the norm $\in \bZ \cup \{0\}$
+    \end{proof}
+    \end{itemize}
 \end{definition}
 
 We want units (and only units) to preserve norm.
 \begin{lemma}
     $\|f(x)g(x)\| = \|f(x)\| \Leftrightarrow g(x) \in \qx^{\times}$ 
 \end{lemma}
-\begin{proof}
+\begin{proof}   
     \begin{itemize}
-        \item  $ g(x) \in \qx^{\times} \Rightarrow \|f(x)g(x)\| = \|f(x)\|$
-        \begin{proof}
+        \item  $ g(x) \in \qx^{\times} \Rightarrow \|f(x)g(x)\| = \|f(x)\|$\\
             Since $\|g(x)\| = 1$, $\|f(x)g(x)\| = \|f(x)\| \m 1 = \|f(x)\|$.
-        \end{proof}
-        \item $\|f(x)g(x)\| = \|f(x)\| \Rightarrow g(x) \in \qx^{\times}$ 
-        \begin{proof}
+        \item $\|f(x)g(x)\| = \|f(x)\| \Rightarrow g(x) \in \qx^{\times}$ \\
             Since $\|f(x)g(x)\| = \|f(x)\| \|g(x)\|$. As $ \|f(x)\|, \|g(x)\| \in \bZ^+$, if $\|f(x)g(x)\| = \|f(x)\|$, $\|g(x)\| = 1$. Thus, $g(x) \in \qx^{\times}$.
-        \end{proof}
     \end{itemize}
 \end{proof}
 
@@ -239,6 +233,7 @@ $f-g=0$.  Thus $f=g$.
 \end{proof}
 
 \subsection{Basic Arithmetic}
+
 Almost all the integer properties have analogous properties in $\qx$.
 \begin{lemma}[Uniqueness of zero and one]
 The additive identity and multiplicative identity in $\Qx$ are unique.
@@ -246,7 +241,6 @@ In particular, if $f(x)+z(x)=f(x)$ for every $f(x)\in\Qx$, then
 $z(x)=0$.  Similarly, if $f(x)u(x)=f(x)$ for every $f(x)\in\Qx$, then
 $u(x)=1$.
 \end{lemma}
-
 \begin{proof}
 Suppose $z$ acts like an additive identity for $f$, so $f+z=f$.  Add $-f$ to
 both sides:
@@ -265,6 +259,15 @@ this on the constant polynomial $1$:
 1\cdot u=1.
 \]
 But $1\cdot u=u$.  Hence $u=1$.
+\end{proof}
+
+\begin{lemma}$0 \neq 1$\end{lemma}
+\begin{proof}
+$0_{\Qx}$ has constant coefficient $0$, while $1_{\Qx}$ has constant
+coefficient $1$. Since $0\neq1$ in $\mathbb{Q}$,
+\[
+0_{\Qx}\neq1_{\Qx}.
+\]
 \end{proof}
 
 \begin{lemma}[Uniqueness of additive inverses]
@@ -352,7 +355,7 @@ g(x)=f(x)q(x).
 \end{definition}
 The greatest common divsor is also helpful in many theorems.
 \begin{definition}[Greatest Common Divisor]
-    For $f(x),g(x)\in\Qx$, we defince $\gcd(f(x),g(x)) = d(x)$ to satisfy:
+    For $f(x),g(x)\in\Qx$, we define $\gcd(f(x),g(x)) = d(x)$ to satisfy:
     \begin{itemize}
         \item $d(x) \mid f(x)$ and $d(x) \mid g(x)$
         \item $\forall h(x) \in \Qx$ s.t. $h(x) \mid f(x)$ and $h(x) \mid g(x)$, $\|h(x)\| \leq \|d(x)\|$

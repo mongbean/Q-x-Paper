@@ -14,7 +14,7 @@ Define $\bQ \subseteq \mathbb{Z}\times \mathbb{Z}$, where the elements of $\math
 Also, define an equivalence relation on $\mathbb{Q}$. Two elements $(a,b),(c,d)$ in $\mathbb{Q}$ are equal iff $ad=bc$. Denote equivalence as $(a,b)\sim(c,d)$.
 
 We can also denote $(a,b)$ as $\frac{a}{b}$.
-The rationals are a Ring as defined by the ring axioms.
+The rationals are a Ring as defined by the ring axioms. For $a, b, c, d, e, f\in \bZ$, 
 \subsection{Ring Axioms}
 \textbf{Commutativity of Multiplication: } \[(a,b) \cdot (c,d) = (ac,bd) \qquad \text{and} \qquad (c,d) \cdot (a,b) = (ca, db) = (ac,bd)\]
 
@@ -45,7 +45,7 @@ From the definition, $(a,b)+(0,1)$ equals
 \[
 (a\cdot 1+b\cdot 0, b\cdot 1)
 \]
-By the one axiom and zero axiom,
+By the one axiom and zero axiom of $\bZ$,
 \[
 (a,b)
 \]
@@ -58,7 +58,7 @@ From the definition, $$(a,b)\cdot(1,1)$$ equals
 \[
 (a\cdot1,b\cdot1)
 \]
-By the one axiom, 
+By the one axiom of $\bZ$, 
 \[(a,b)\]
  
 \noindent\textbf{Distributivity: }
@@ -79,7 +79,7 @@ For the other side,
 \subsection{Equivalence}
 Two rationals are equal if and only if they can be simplified to each other. In other words, 
 \[
-(a,b)\sim(c,d) \longleftrightarrow ad=bc
+(a,b)\sim(c,d) \Leftrightarrow ad=bc
 \]
 \noindent\textbf{Symmetry: } If $(a,b)\sim(c,d)$, then $(c,d)\sim(a,b)$
 \begin{proof}
@@ -102,7 +102,7 @@ To show that multiplication is well defined, we show that $(a,b) \cdot (c,d) = (
 
 
 \subsection{Multiplicative Inverse}
-%% whats the theorem
+%% todo: whats the theorem
 For any $(a,b)$ and $(c,d)\in\mathbb{Q}$, and $a\neq0$, $\exists(bc,ad)$ where
 \[
 (a,b)(bc,ad)=(abc,abd)
