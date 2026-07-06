@@ -1,6 +1,6 @@
-%\section{Introduction}
-
-%\section{History}
+\section{Introduction}
+The integers are powerful because their arithmetic has a deep structure:  we can divide with remainder, use Euclid’s Algorithm to find greatest common divisors, and prove that prime factorization is unique. This paper builds the same story for rational polynomials in Q[x]. Starting from the basic properties of the integers and rationals, we construct Q[x], define a norm based on degree, and use that norm to prove a division algorithm for polynomials. From there, the familiar integer machinery returns like Euclid’s Algorithm gives gcds, Bezout’s Identity writes them as linear combinations, and Euclid’s Lemma explains how prime polynomials divide products. These results come together to prove unique factorization in Q[x].
+\section{History}
 %Historical background is often nice.
 
 
@@ -60,12 +60,12 @@ For properties of exponents, see Appendix B.
 \input{Sections/uniqueness.tex}
 
 \section{Conclusion}
+\epigraph{\textit{“Mathematics consists in proving the most obvious thing in the least obvious way.”}}{-- George Pólya}
+
 Finally, we have proved that every number has a unique factorization. This can be formalized in our final theorem:
 \begin{theorem} (Unique Factorization)
    Every rational polynomial $f(x) \in \qx$ can be expressed as $u(x)\prod _{i=1}^n p_i(x)^{\alpha_i}$ where the set $S= \{(p_i, \alpha_i)\}$ is unique.
 \end{theorem}
-%%todo: grand poncy conclusion
-
 
 \section*{Appendix A: Summation and Product Lemmas}
 \input{Sections/sumprod.tex}
