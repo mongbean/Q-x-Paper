@@ -3,15 +3,12 @@ Now we can formally define our rational polynomial.
 \begin{definition}[The polynomial ring $\Qx$]
 We define a polynomial $f(x) \in \Qx$ with degree $n$ if it can be written as
 \[
-f(x)=\sum_{0}^{n} a_i x^i
+f(x)=\sum_{i=0}^{n} a_i x^i
 \]
 where $n\in\mathbb{Z}_{\geq0}$ and each coefficient $a_i$ lies in $\mathbb{Q}$ and $a_n \neq 0$. For convenience, $f(x)$ can also be notated as $f$.
 \\ Define two operations $+, \m$ such that, given $f(x) = \sum_{i=0}^{n} a_i x^i$ and $g(x) = \sum_{i=0}^{m} b_i x^i $
 \begin{itemize}
-    \item $+$: $\begin{cases}
-        m>n &  f(x) + g(x) = \sum_{i=0}^{n} (a_i +b_i)x^i + \sum_{i=n+1}^{m} (b_i)x^i \\ 
-        n<m & f(x) + g(x) = \sum_{i=0}^{m} (a_i +b_i)x^i + \sum_{i=m+1}^{n} (a_i)x^i
-    \end{cases}$\\
+    \item $+$: $f(x) + g(x) = \sum_{i=0}^{\max(n,m)} (a_i +b_i)x^i$ with $b_i = 0$ for $i > m$ and $a_i = 0$ for $i > n$. \\
     Since $\mathbb{Q}$ is closed under addition, each
 $a_i+b_i$ is rational. Hence $f(x)+g(x)\in\Qx$.
     \item $\times$: By Multiplied Sums, $f(x)\cdot g(x) = \sum_{i=0}^{n} \sum_{j=0}^{m} a_i b_j x^{i+j}$
@@ -348,7 +345,7 @@ The greatest common divsor is also helpful in many theorems.
     For $f(x),g(x)\in\Qx$, we define $\gcd(f(x),g(x)) = d(x)$ to satisfy:
     \begin{itemize}
         \item $d(x) \mid f(x)$ and $d(x) \mid g(x)$
-        \item $\forall h(x) \in \Qx$ s.t. $h(x) \mid f(x)$ and $h(x) \mid g(x)$, $\|h(x)\| \leq \|d(x)\|$
+        \item For all $ h(x) \in \Qx$ s.t. $h(x) \mid f(x)$ and $h(x) \mid g(x)$, $\|h(x)\| \leq \|d(x)\|$
     \end{itemize}
 \end{definition}
 

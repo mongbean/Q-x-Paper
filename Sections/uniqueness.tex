@@ -21,8 +21,8 @@ Finally, we can prove the uniqueness of prime factorizations. For a prime and it
     $\alpha_i \in \bZ^+$, then only the set $S= \{(p_i, \alpha_i)\}$ has this property. 
 \end{lemma}
 \begin{proof}
-For the sake of contradiction, there exists $A = \{(q_i, \beta_i)\}$ of size $m$, s.t. \[f(x) = u(x)\prod _{i=1}^mq_i(x)^{\beta_i}\] and $\exists (q_k, \beta_k) \in A$ s.t. $(q_k, \beta_k) \notin S$. This can be true in two ways.\\
-\textbf{Case 1: } $\forall \phi \in \pZ$, $(q_k(x), \phi) \notin S$.  
+For the sake of contradiction, there exists $A = \{(q_i, \beta_i)\}$ of size $m$, s.t. \[f(x) = u(x)\prod _{i=1}^mq_i(x)^{\beta_i}\] and there exists $(q_k, \beta_k) \in A$ s.t. $(q_k, \beta_k) \notin S$. This can be true in two ways.\\
+\textbf{Case 1: } For all $ \phi \in \pZ$, $(q_k(x), \phi) \notin S$.  
 \begin{align*}
     u(x)\prod _{i=1}^mq_i(x)^{\beta_i} &= u(x)\prod _{i=1}^n p_i(x)^{\alpha_i} \\
     \prod _{i=1}^mq_i(x)^{\beta_i} &= \prod _{i=1}^n p_i(x)^{\alpha_i}\\
@@ -30,7 +30,7 @@ For the sake of contradiction, there exists $A = \{(q_i, \beta_i)\}$ of size $m$
 \end{align*}
 Thus, we know that $q_k(x)^{\beta_k} \mid \prod _{i=1}^n p_i(x)^{\alpha_i}$. By Lemma ???? we know that $q_k^{\beta_k} \mid p_i(x)^{\alpha_i}$ for some $i$, yet since $p_i \neq q_k$, we know that 
 \[\forall p_i \in S \quad \gcd(p_i^{\alpha_i}, q_k^{\beta_k}) = 1 \qquad \text{Lemma ??????}\] Thus, this is a contradiction.\\
-\textbf{Case 2: } $\forall  a(x) \in \qx$, $(a(x), \beta_k) \notin S$. From the above, we know that $\exists (p_j(x), \alpha_j) \in S$ such that $p_j(x) = q_k(x)$. Again, 
+\textbf{Case 2: } For all $a(x) \in \qx$, $(a(x), \beta_k) \notin S$. From the above, we know that there exists $(p_j(x), \alpha_j) \in S$ such that $p_j(x) = q_k(x)$. Again, 
 \begin{align*}
     u(x)\prod _{i=1}^mq_i(x)^{\beta_i} &= u(x)\prod _{i=1}^n p_i(x)^{\alpha_i} \\
     \prod _{i=1}^mq_i(x)^{\beta_i} &= \prod _{i=1}^n p_i(x)^{\alpha_i}\\
@@ -44,7 +44,7 @@ Now, we have 2 cases, as $\beta_k \neq \alpha_j$. \\
      q_k^{\beta_k}  \m q_k^{\beta_k-\alpha_j} \m\prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= q_k^{\beta_k}\m \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
     q_k^{\beta_k-\alpha_j} \m\prod _{i=1}^{k-1}q_i(x)^{\beta_i} \m \prod _{i=k+1}^{m}q_i(x)^{\beta_i} &= \prod _{i=1}^{j-1}p_i(x)^{\alpha_i} \m \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}\\
 \end{align*}
-Thus, $q_k^{\beta_k-\alpha_j} \mid \prod _{i=1}^{j-1}p_i(x)^{\alpha_i}$ or $q_k^{\beta_k-\alpha_j} \mid \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}$ by the Fundamental Lemma. However, neither can be true as $\forall p_i \in S \quad \gcd(p_i^{\alpha_i}, q_k^{\beta_k}) = 1$. Thus, this is a contradiction.\\
+Thus, $q_k^{\beta_k-\alpha_j} \mid \prod _{i=1}^{j-1}p_i(x)^{\alpha_i}$ or $q_k^{\beta_k-\alpha_j} \mid \prod _{i=j+1}^{n}p_i(x)^{\alpha_i}$ by the Fundamental Lemma. However, neither can be true as for all  $p_i \in S \quad \gcd(p_i^{\alpha_i}, q_k^{\beta_k}) = 1$. Thus, this is a contradiction.\\
 \textbf{Case 2.2: }$\beta_k <\alpha_j$ can be proven using an analogous argument. 
 \end{proof}
 

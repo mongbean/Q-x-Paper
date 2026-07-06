@@ -22,13 +22,13 @@ Let $\bZ^+$ be the set of positive integers. The following axioms define an \tex
     \item For every $a\in\bZ$, exactly one of $a\in\bZ^+$, $a=0$, or $-a\in\bZ^+$ is true.
 \end{itemize}
 \end{definition}
+To fully define the integers, our final axiom is:
+\begin{definition}[Well-Ordering Principle]
+Every nonempty subset of $\bZ^+$ has a least element.
+\end{definition}
 
 \begin{definition}
 For $a,b\in\bZ$, define $a<b$ if $b-a\in\bZ^+$. Define $a>b$ if $b<a$. Define $a\leq b$ if $a<b$ or $a=b$, and define $a\geq b$ if $a>b$ or $a=b$.
-\end{definition}
-
-\begin{definition}[Well-Ordering Principle]
-Every nonempty subset of $\bZ^+$ has a least element.
 \end{definition}
 
 \subsection{Basic Arithmetic}
@@ -89,6 +89,15 @@ If both inequalities are equalities, the result is clear. Otherwise, the differe
 If $a,b\in\bZ^+$, then $ab\geq a$.
 \end{lemma}
 
+\begin{lemma}[NIBZO]
+There is no integer strictly between $0$ and $1$.  Equivalently, if
+$n\in\mathbb{Z}$ and
+\[
+0<n<1,
+\]
+then such an $n$ cannot exist.
+\end{lemma}
+
 \begin{proof}
 Since $b\in\bZ^+$, NIBZO gives $1\leq b$. If $b=1$, then $ab=a$. If $1<b$, then $b-1\in\bZ^+$. Since $a\in\bZ^+$, we get $a(b-1)\in\bZ^+$. But $a(b-1)=ab-a$, so $a<ab$. Hence $a\leq ab$.
 \end{proof}
@@ -100,15 +109,6 @@ If $a,b\in\bZ^+$, then $ab=a$ if and only if $b=1$.
 \begin{proof}
 If $b=1$, then $ab=a$. Conversely, suppose $ab=a$. If $b\neq1$, then since $b\in\bZ^+$ and $1\leq b$, we have $1<b$. Thus $b-1\in\bZ^+$. Since $a\in\bZ^+$, $a(b-1)\in\bZ^+$. But $a(b-1)=ab-a=0$, contradicting $0\notin\bZ^+$. Therefore $b=1$.
 \end{proof}
-
-\begin{lemma}[NIBZO]
-There is no integer strictly between $0$ and $1$.  Equivalently, if
-$n\in\mathbb{Z}$ and
-\[
-0<n<1,
-\]
-then such an $n$ cannot exist.
-\end{lemma}
 
 \begin{proof}
 Suppose, for contradiction, that there is an integer strictly between $0$ and
