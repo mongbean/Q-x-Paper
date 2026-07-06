@@ -103,16 +103,17 @@ To show that multiplication is well defined, we show that $(a,b) \cdot (c,d) = (
 
 \subsection{Multiplicative Inverse}
 %% todo: whats the theorem
-For any $(a,b)$ and $(c,d)\in\mathbb{Q}$, and $a\neq0$, $\exists(bc,ad)$ where
+
+\begin{theorem}[]
+    For any $(a,b)\in\mathbb{Q}$, and $a\neq0$, $\exists(c,d)$ where $(a,b)(c,d)=(1,1)$
+\end{theorem}
+
+Consider $(b,a)$ ,and $(b,a)\in\bQ$ since $a\neq0$. Then,
 \[
-(a,b)(bc,ad)=(abc,abd)
+(a,b)(b,a)=(ab,ba)
 \]
 and
 \[
-(abc,abd)\sim(c,d)
+(ab,ba)=(ab,ab)\sim(1,1)
 \]
-then
-\[
-(a,b)\mid(c,d)
-\]
-Therefore, define $\frac{p}{q}$ for $p,q\in\mathbb{Q}$ and $p\neq0$ to be the unique solution $x$ to $px=q$. Note also that this is equivalent to the fraction notation of rationals since $\frac{(a,1)}{(b,1)}=(a,b)=\frac{a}{b}$. Then, define $p^{-1}$ to be $\frac{(1,1)}{p}$.
+so $(b,a)$ suffices as such $(c,d)$.
